@@ -79,6 +79,8 @@ gulp.task('css', function () {
 // 编译less,并压缩css输出到目标目录
 gulp.task('css-dev', function () {
     return gulp.src(developPath + "css/**")
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+        .pipe(less())
         .pipe(gulp.dest(buildPath + "css/"))
 })
 
