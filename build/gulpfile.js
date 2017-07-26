@@ -102,6 +102,9 @@ gulp.task('js', function () {
 
 gulp.task('js-dev', function () {
     return gulp.src((developPath + 'js/**'))
+        .pipe(babel({
+            presets: [es2015]
+        }))
         .pipe(gulp.dest(buildPath + "js/"))
 });
 
@@ -156,6 +159,9 @@ gulp.task('Edox', function () {
 // 框架依赖  输出到目标目录
 gulp.task('Edox-dev', function () {
     return gulp.src([developPath + 'Edox/*.js'])
+        .pipe(babel({
+            presets: [es2015]
+        }))
         .pipe(gulp.dest(buildPath + "Edox/"))
 });
 
@@ -185,6 +191,11 @@ gulp.task('server', function () {
 //本地开发执行默认任务
 gulp.task('default', function () {
     runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev", "Edox-dev"], "server");
+});
+
+//执行打包发布任务(不压缩)
+gulp.task('develop', function () {
+    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev", "Edox-dev"]);
 });
 
 //执行打包发布任务
