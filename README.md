@@ -4,6 +4,9 @@
 ##1 npm install
 ##2 node map
 
+#  首先全局安装gulp
+   npm install -g gulp
+
 #  开发使用
 
 ##develop:  gulp
