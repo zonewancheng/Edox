@@ -1,7 +1,7 @@
 /*
  * @Author: fishCat
  * @Date:   2015-05-16 10:25:09
- * @Last Modified by:   oospace
+ * @Last Modified by:   fishCat
  * @Last Modified time: 2017-05-16 16:27:54
  */
 var gulp = require('gulp'); //  引入 gulp
@@ -44,6 +44,10 @@ var autoprefixer = require('autoprefixer');
 var developPath = "../src/";
 var buildPath = "../dist/";
 var clean = require('gulp-clean');
+
+var replace = require('gulp-replace');
+var through = require('through2');
+
 //获取文件夹下所有的文件名字并返回一个数组
 var readFileNameList = function (path) {
     var result = [];
@@ -64,6 +68,12 @@ var readFileNameList = function (path) {
     return result;
 }
 
+// 打包项目所需要的模块
+gulp.task('pkg', function () {
+    return;
+})
+
+
 // 编译less,并压缩css输出到目标目录
 gulp.task('css', function () {
     return gulp.src(developPath + "css/**")
@@ -82,6 +92,35 @@ gulp.task('css-dev', function () {
         .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
         .pipe(less())
         .pipe(gulp.dest(buildPath + "css/"))
+
+})
+
+// 编译less,并压缩css输出到目标目录
+gulp.task('css-dev', function () {
+    return gulp.src(developPath + "css/**")
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+        .pipe(less())
+        .pipe(gulp.dest(buildPath + "css/"))
+})
+
+// 编译less,并压缩css输出到目标目录
+gulp.task('static', function () {
+    return gulp.src(developPath + "static/**")
+        .pipe(sourcemaps.init())
+        .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+        .pipe(less())
+        .pipe(minifycss())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(buildPath + "static/"))
+})
+
+// 编译less,并压缩css输出到目标目录
+gulp.task('static-dev', function () {
+    return gulp.src(developPath + "static/**")
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+        .pipe(less())
+        .pipe(gulp.dest(buildPath + "static/"))
 })
 
 // 编译ES6到ES5,并压缩js 输出到目标目录
@@ -100,6 +139,7 @@ gulp.task('js', function () {
             console.log(e);
         })
         .pipe(gulp.dest(buildPath + "js/"))
+
 });
 
 gulp.task('js-dev', function () {
@@ -123,14 +163,132 @@ gulp.task('html', function () {
         minifyCSS: true//压缩页面CSS
     };
     return gulp.src([developPath + '*.html'])
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "<link href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
+            var content = file.contents.toString();
+            content = content.replace('<!--_HEAD_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "感谢使用Edox";
+            var content = file.contents.toString();
+            content = content.replace('<!--_BODY_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            var content = file.contents.toString();
+            content = content.replace('<!--_FOOT_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            var content = file.contents.toString();
+            content = content.replace('<!--_OTHER_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
         .pipe(htmlmin(options))
         .pipe(gulp.dest(buildPath))
 });
 
+function htmlReplace(str, name) {
+    console.log(name)
+    return replace(str, name);
+
+}
+
 gulp.task('html-dev', function () {
     return gulp.src([developPath + '*.html'])
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "<link href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
+            var content = file.contents.toString();
+            content = content.replace('<!--_HEAD_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "感谢使用Edox";
+            var content = file.contents.toString();
+            content = content.replace('<!--_BODY_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            var content = file.contents.toString();
+            content = content.replace('<!--_FOOT_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            var content = file.contents.toString();
+            content = content.replace('<!--_OTHER_CONTAINER_-->', name);
+            file.contents = new Buffer(content);
+            this.push(file);
+            cb();
+        }))
         .pipe(gulp.dest(buildPath))
 });
+
+// 图片压缩  输出到目标目录
+gulp.task('images', function () {
+    return gulp.src([developPath + 'imgs/*.*'])
+        .pipe(imagemin())
+        .pipe(gulp.dest(buildPath + "imgs/"))
+});
+
+// 图片压缩  输出到目标目录
+gulp.task('images-dev', function () {
+    return gulp.src([developPath + 'imgs/*.*'])
+        .pipe(gulp.dest(buildPath + "imgs/"))
+});
+
+// 框架依赖  输出到目标目录
+gulp.task('Edox', function () {
+    return gulp.src([developPath + 'Edox/**'])
+        .pipe(babel({
+            presets: [es2015]
+        }))
+        .pipe(jshint(".jshintrc"))
+        //.pipe(jshint.reporter("default"))
+        .pipe(jshint.reporter(stylish))
+        .pipe(uglify({mangle: false}))
+        .pipe(gulp.dest(buildPath + "Edox/"))
+});
+
+// 框架依赖  输出到目标目录
+gulp.task('Edox-dev', function () {
+    return gulp.src([developPath + 'Edox/**'])
+});
+
+gulp.task('js-dev', function () {
+    return gulp.src((developPath + 'js/**'))
+        .pipe(babel({
+            presets: [es2015]
+        }))
+        .pipe(gulp.dest(buildPath + "js/"))
+});
+
 
 // 图片压缩  输出到目标目录
 gulp.task('images', function () {
@@ -185,22 +343,23 @@ gulp.task('server', function () {
         server: buildPath,
     });
     gulp.watch(developPath + "**/*").on('change', function () {
-        runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev", "Edox-dev"], "reload");
+        runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev"], "reload");
     });
 });
 
 
 //本地开发执行默认任务
 gulp.task('default', function () {
-    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev", "Edox-dev"], "server");
+    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev"], "server");
 });
 
 //执行打包发布任务(不压缩)
 gulp.task('develop', function () {
-    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev", "Edox-dev"]);
+    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev"]);
 });
 
 //执行打包发布任务
 gulp.task('product', function () {
-    runSequence("clean", ["html", "css", "js", "images", "Edox"]);
+    runSequence("clean", ["html", "css", "js", "images"]);
 });
+
