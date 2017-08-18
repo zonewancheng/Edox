@@ -13,6 +13,12 @@ epx.app = function () {
 epx.dom = function () {
 
 }
+epx.template =function () {
+    
+}
+epx.mvx =function () {
+    
+}
 epx.bom = function () {
 
 }
