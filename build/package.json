@@ -37,6 +37,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
+    "gulp-replace": "^0.6.1",
     "gulp-rev-append": "^0.1.8",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
@@ -44,13 +45,21 @@
     "path": "^0.12.7",
     "precss": "^1.4.0",
     "promise": "^7.1.1",
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.3",
+    "jshint-stylish": "^2.2.1",
+    "path": "^0.12.7",
+    "precss": "^1.4.0",
+    "promise": "^7.1.1",
     "run-sequence": "^1.2.2"
   },
   "dependencies": {},
-  "jshintConfig":{
+  "jshintConfig": {
     "undef": true,
     "unused": true,
-    "predef": [ "MY_GLOBAL", "ads" ]
+    "predef": [
+      "MY_GLOBAL",
+      "ads"
+    ]
   }
 }
-
