@@ -1,6 +1,6 @@
 /**
  * Created by oospace on 2016/9/20.
- * 自动配置创建HTML模板文件
+ * 自动配置创建HTML模板文件和对应的页面文件夹
  * 需求模块 fs
  * 在需求目录下执行 node .js
  */
@@ -47,19 +47,27 @@ var pageList = { //页面列表
     //模块B
     "login": "登录",
     //模块C
-    "register": "注册"
+    "register": "注册",
+    //模块D
+    "logout":"退出"
 };
 var basePath = "../src/";//文件路径
-var reCreate = true;//已有的文件是否重新创建，暂不支持， 可扩展
+var reCreate = true;//已有的文件是否重新创建，暂未打算支持， 可扩展
 
-/*if (fs.existsSync(basePath)) {
- console.log('已经创建过此目录了');
- } else {
- fs.mkdirSync(basePath);
- console.log('目录已创建成功\n');
- }*/
+//文件路径不统一覆盖
+for(var key in pageList){
+    if (fs.existsSync(basePath+"pages/"+key)) {
+        console.log("已创建过"+basePath+"pages/"+key+"目录");
+    } else {
+        fs.mkdirSync(basePath+"pages/"+key);
+        console.log('目录'+basePath+"pages/"+key+'已创建成功\n');
+    }
+}
 
-console.log(pageList);
+
+//console.log(pageList);
+
+//模版文件统一重新覆盖
 for (var key in pageList) {
     console.log(key);
     var template = "<!DOCTYPE html>\n" +
@@ -79,6 +87,7 @@ for (var key in pageList) {
     //创建文件
     fs.writeFile(basePath + key + ".html", template, function (err) {
         if (err) throw err;
+        console.log("生成模版"+basePath + key + ".html"+"页面");
     });
 }
 
