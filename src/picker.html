@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API</title>
+    <link rel="stylesheet" href="static/swiper.min.css">
+    <link rel="stylesheet" href="static/zui.css">
+    <link rel="stylesheet" href="css/api.css">
+
+    <style>
+        * {
+            user-select: none;
+        }
+
+        #date-picker {
+            margin: 90px 0;
+            background: #f5f5f5;
+            border-top: 1px solid #dcdcdc !important;
+            border-bottom: 1px solid #dcdcdc !important;
+        }
+
+        #position-picker {
+            margin: 50px 0;
+            background: #f5f5f5;
+            border-top: 1px solid #dcdcdc !important;
+            border-bottom: 1px solid #dcdcdc !important;
+        }
+
+        #shouru-picker {
+            margin: 50px 0;
+            background: #f5f5f5;
+            border-top: 1px solid #dcdcdc !important;
+            border-bottom: 1px solid #dcdcdc !important;
+        }
+
+        .picker-select-index {
+            border-top: 1px solid #dcdcdc;
+            border-bottom: 1px solid #dcdcdc;
+            box-shadow: none !important;
+            background: rgba(0, 0, 0, 0.3);
+            /*box-shadow: 0 0 1px #00abeb;*/
+            /*position: absolute;
+            width: 100%;*/
+        }
+
+        li {
+            list-style: none;
+            font-size: 18px;
+            color: #999;
+            font-family: Arial;
+            font-weight: 500;
+            background-color: transparent;
+        }
+
+        .__picker {
+
+        }
+
+        .__index {
+            color: #333;
+            /*transform: scale3d(1, 1, 1) !important;*/
+        }
+
+        .__prev {
+
+        }
+
+        .__next {
+
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .flex4 {
+            flex: 8;
+        }
+    </style>
+</head>
+<body>
+
+<section id="date-picker" class="flex"></section>
+<section id="position-picker" class="flex"></section>
+<section id="shouru-picker" class="flex"></section>
+
+</body>
+<script type="text/javascript">
+    
+    var picker = function (id, options) {
+
+        if (!id) {
+            alert("容器 id 不能为空");
+            return
+        }
+        this.constructor = picker;
+
+        options = options || {};//为空则初始化
+        this._parentId = id;
+        this._modelData = options.viewData || viewData;//视图层数据
+        this._lineHeight = options.lineHeight || 48;//px *此处lineHeight需要在样式中设置！
+        this._moveDistance = options.moveDistance || 1;//每次滚动的单位 px ，加快滚动速度，与回弹速度
+        this._moveDouble = options.moveDouble || 2;// 惯性系数 数字越大 拖动后滚动的距离越远
+        /*this._dragSpeed = options.dragSpeed || 1; //惯性系数*/
+        this._moveRate = options.moveRate || 500;// 1~1000 移动频率 数字越大，频率越高
+        this._character = options.character || null;//间隔符号
+        this._showLines = options.showLines || 3;//默认显示行数
+        this._fza = options.fza || 0.02; //阻力系数 单位时间内速度减小的值
+        this._resistance = options.resistance || 0.10;// 当滚动超出边界时受到阻力
+
+        this.init = function () {//全局初始化
+
+            //禁止容器内的mousemove(PC)和touchmove(Mobile)事件
+
+            this.resetPICKERBind(this._parentId);//清空容器事件;
+
+            //存放所有picker的id的数组
+            this._pickerIdList = [];
+
+            //初始化Picker(最外层容器)总高度
+            this._$(id).style.height = this._lineHeight * this._showLines + "px";
+            this._$(id).style.overflow = "hidden";
+            this._$(id).style.userSelect = "none";
+            this._$(id).style.position = "relative";
+            this._$(id).style.cursor = "default";
+            this._$(id).style.transform = "rotateY(0)";
+            this._$(id).style.borderTop = "1px solid #ececec";
+            this._$(id).style.borderBottom = "1px solid #ececec";
+
+            this._pickerNum = Object.keys(this._modelData.data).length;
+
+            //渲染DOM
+            this.renderHtml(id, this._modelData);
+
+            //初始化每个picker的最大可移动距离
+            var dataListJson = this._modelData.data;
+            this.initPickerMoveDistance(id, dataListJson);
+
+            this.setTimerControl();
+
+            //初始化绑定事件
+            this.initBindEvent();
+
+        }
+        this.init();
+    }
+    /*阻止冒泡*/
+    picker.prototype.stopBubble = function (e) {
+        return new function () {
+            e.stopPropagation();
+            e.preventDefault();
+            return false;
+        }
+    }
+    /*回到初始状态*/
+    picker.prototype.resetPicker = function (id) {
+        var index = 0;
+        this._$(id + "-" + index).setAttribute("class", "__index");
+
+        this._$(id).style.transform = "translateY(0)";
+        this._$(id).setAttribute("selectIndex", 0)
+    }
+    /*清空绑定事件*/
+    picker.prototype.resetPICKERBind = function (id) {
+        var scope = this;
+        this._$(id).onclick = null;
+        this._$(id).onmousemove = null;
+        this._$(id).addEventListener("touchstart", function (e) {
+            scope.stopBubble(e)
+        })
+        this._$(id).addEventListener("touchmove", function (e) {
+            scope.stopBubble(e)
+        })
+        this._$(id).addEventListener("touchend", function (e) {
+            scope.stopBubble(e)
+        })
+    }
+    picker.prototype._$ = function (id) {
+        return document.getElementById(id);
+    }
+    /*初始化每个picker的最大移动距离*/
+    picker.prototype.initPickerMoveDistance = function (did, dataListJson) {
+        for (var data in dataListJson) {
+
+            var pk_cid = data;
+            var id = did + "-" + pk_cid;
+
+            //初始化所有picker的子对象
+            this[id] = {};
+
+            //存放所有picker的强制停止状态,默认都是关闭的
+            this[id]._forceStop = false;
+
+            //存放所有picker的Id的数组
+            this._pickerIdList.push(id);
+
+            //初始化每个picker的滚动状态
+            this[id].moving = false;//刚开始都是停止状态
+
+            //初始化每个picker的最大可滚动到的index
+            this[id].maxIndex = dataListJson[pk_cid].list.length - 1;
+
+            //初始化每个picker的最大高度
+            this[id].maxMoveDistance = this[id].maxIndex * this._lineHeight;
+            //console.log("INITHEIGHT:::" + _height + ":" + this[_height])
+
+            //初始化每个picker的当前选中元素
+            var indexId = id + "-0";
+            this.initSelect(indexId);
+
+            //初始化当前选中项的列表
+            //this._selectOptions = this.getSelectOptionsList();
+        }
+    }
+    /*初始化选中的元素的类名,id选中元素的id*/
+    picker.prototype.initSelect = function (id, index) {
+        index = index || 0;
+        this._$(id) && this._$(id).setAttribute("class", "__index")
+        this._$(id) && this._$(id).parentNode.setAttribute("selectIndex", index);
+        this.onSelectChangedCallBack(id);
+    }
+    /*使用HTML填充显示PCIKER的容器*/
+    picker.prototype.renderHtml = function (id, viewData) {
+        var html = this.renderTpl(id, viewData);
+        this._$(id).innerHTML = html;
+    }
+    /*根据模版渲染HTML*/
+    picker.prototype.renderTpl = function (id, viewData) {
+
+        var data = viewData.data;
+        var chr = this._character;
+        var _x = 0;
+
+        var ddd = document.createElement("div")
+
+        for (var key in data) {
+
+            var dt = data[key];
+
+            //每个picker的容器
+            var div = document.createElement("div");
+            div.className = "flex4";
+            div.style = "margin-top:" + this._lineHeight * (parseInt(this._showLines / 2) - 1) + "px;";
+
+            var ul = document.createElement("ul");
+            ul.id = id + "-" + dt.cid;
+            ul.className = "__picker";
+            ul.style = "white-space:nowrap;text-align:center;transform:translateY(0);transform-style: preserve-3d;line-height:" + this._lineHeight + "px";
+            ul.setAttribute("selectIndex", 0);
+
+            var li = document.createElement("li");
+            li.className = "__prev";
+            li.style = "white-space:nowrap;text-align:center;height:" + this._lineHeight + "px;line-height:" + this._lineHeight + "px";
+
+
+            ul.appendChild(li);
+
+
+            //渲染每个picker的单个元素
+            for (var i = 0; i < dt.list.length; i++) {
+                var _dt = dt.list[i];
+                var _li = document.createElement("li");
+
+                _li.id = id + "-" + dt.cid + "-" + i;
+                _li.style = "height:" + this._lineHeight + "px;";
+                _li.innerText = _dt + dt.suffix;
+                ul.appendChild(_li);
+
+            }
+
+            var li_ = document.createElement("li");
+            li_.className = "__next";
+            li_.style = "height:" + this._lineHeight + "px; ";
+
+            ul.appendChild(li_);
+
+            div.appendChild(ul);
+
+            ddd.appendChild(div);
+
+            //在每个picker之间添加间隔符号
+            _x++;
+            if (_x != this._pickerNum && this._character) {
+
+                var c_div = document.createElement("div");
+                var c_li = document.createElement("li");
+                var _c_li = document.createElement("li");
+                var c_li_ = document.createElement("li");
+
+                c_div.className = "flex1";
+                c_div.style = "white-space:nowrap;text-align:center;margin-top:"
+                    + this._lineHeight * (parseInt(this._showLines / 2) - 1) + "px;line-height:" + this._lineHeight + "px";
+
+                c_li.className = "__prev";
+                c_li.style.height = this._lineHeight + "px";
+                _c_li.className = "___index";
+                _c_li.innerText = chr;
+                _c_li.style.height = this._lineHeight + "px";
+                c_li_.className = "___next";
+                c_li_.style.height = this._lineHeight + "px";
+
+                c_div.appendChild(c_li);
+                c_div.appendChild(_c_li);
+                c_div.appendChild(c_li_);
+
+                ddd.appendChild(c_div);
+            }
+
+
+        }
+
+        var _div = document.createElement("div");
+        _div.className = "picker-select-index";
+        _div.style = "left:0;width:100%;-webkit-box-sizing:border-box;box-sizing:border-box;" +
+            "position:absolute;pointer-events:none;z-index:1;top:0px;transform:translateY(0);zoom:1;" +
+            "line-height:" + this._lineHeight + "px;" +
+            "height:" + this._lineHeight + "px;" +
+            "margin-top:" + (this._lineHeight * (parseInt(this._showLines / 2)) - 1) + "px";
+
+        ddd.appendChild(_div);
+
+        return ddd.innerHTML;
+    }
+    /*eq=n-1  n为从左往右第n个picker*/
+    picker.prototype.updatePicker = function (eq, dt) {
+        var id = this._pickerIdList[eq];//当前单个picker的id
+
+        //渲染每个picker的单个元素
+        var str = "";
+        str += "<li class='__prev' style='height:" + this._lineHeight + "px; '></li>";
+
+        for (var i = 0; i < dt.list.length; i++) {
+            var _dt = dt.list[i];
+            str += "<li   id='" + id + "-" + i + "' style='height:" + this._lineHeight + "px;'>" + _dt + dt.suffix + "</li>";
+        }
+
+        str += "<li class='__next' style='height:" + this._lineHeight + "px;'></li>";
+        this._$(id).innerHTML = str;
+
+        this.updatePickerMethod(id, dt)
+    }
+    /*更新已更新数据的picker的属性和方法*/
+    picker.prototype.updatePickerMethod = function (id, dt) {
+
+        //初始化每个picker的最大可滚动到的index
+        this[id].maxIndex = dt.list.length - 1;
+
+        //初始化每个picker的最大高度
+        this[id].maxMoveDistance = this[id].maxIndex * this._lineHeight;
+
+        //初始化每个picker的当前选中元素
+        this.updatePickerSelect(id);
+    }
+    /*更新当前选中项*/
+    picker.prototype.updatePickerSelect = function (id) {
+        var index = this._$(id).getAttribute("selectIndex");
+        index = index > this[id].maxIndex ? 0 : index;
+
+        this._$(id + "-" + index).setAttribute("class", "__index");
+
+        this._$(id).style.transform = "translateY(" - this._lineHeight * index + "px)";
+    }
+    /*开始Y轴方向的滚动*/
+    picker.prototype.slideY = function (id, distance, direction, translateY) {
+
+        //滚动效果-匀速滚动 手指或鼠标离开之前
+        this.slideUniform(id, distance, direction, translateY);
+
+    }
+    /*清除所有的定时器*/
+    picker.prototype.destroyALLInterval = function () {
+        var scope = this;
+        for (var i = 0; i <= this.__timer; i++) {
+            window.clearInterval(scope["__timer-" + i]);
+        }
+    }
+    /*滚动效果-匀减速滚动 手指或鼠标离开之后*/
+    picker.prototype.slideSlowness = function (id, v, fza, direction) {
+
+        var scope = this;
+        var vStart = Number(v.toFixed(2));//起始速度
+
+        scope.__timer++;
+        var st = "__timer" + scope.__timer;
+        scope[st] = setInterval(function () {
+
+            console.log("slowness -"+scope[st])
+            //强制停止开关,为true，则强制停止
+            if (scope[id]._forceStop) {
+                console.log("slowness -forceStop");
+                scope.forceStopCallBack(id, scope[st]);
+                return false;
+            }
+
+            if (vStart == 0) {//速度降为零
+                //停止以后自动贴合
+                console.log("slowness -v====0");
+                scope.autoFit(id);
+                clearInterval(scope[st]);
+
+            } else if (vStart < 0) {//速度小于零 ，反向
+
+                scope.autoFit(id);
+                clearInterval(scope[st]);
+            } else {//速度 大于零
+
+                var _max = scope[id].maxMoveDistance;
+                var translateY = scope._$(id) && (scope._$(id).style.transform.split("translateY(")[1]).split("px)")[0];
+
+                //超出范围滚动时，阻力逐渐变大
+                if (translateY < -_max || translateY > 0) {
+                    vStart -= (fza + scope._resistance);
+                } else {
+                    vStart -= fza;//正常范围内滚动时速度逐渐减小
+                }
+
+                vStart = vStart.toFixed(2);//匀减速运动
+                var position = Number(translateY) + Number(direction + vStart);
+
+                //添加越界阻力逻辑
+                position = scope.getReallyEndY(id, position);
+                if (position == 0 || position == -_max) {
+                    console.log("slowness -position==max || position ==0");
+                    var index = Math.abs(position / scope._lineHeight);//
+                    scope.selectIndex(id, index);
+                    scope[id].moving = false;
+                    scope._$(id) && (scope._$(id).style.transform = "translateY(" + position + "px )");
+                    clearInterval(scope[st]);
+
+                } else {
+
+                    scope._$(id) && (scope._$(id).style.transform = "translateY(" + position + "px )");
+                }
+
+            }
+        }, 1000 / this._moveRate)
+
+
+    }
+    /*匀速滚动*/
+    picker.prototype.slideUniform = function (id, distance, direction, translateY) {
+        var num = 0.00;
+        var scope = this;
+
+        scope.__timer++;
+        var _st = "__timer" + scope.__timer
+        scope[_st] = setInterval(function () {
+            console.log("slideUniform -"+scope[_st])
+            //强制停止开关,为true，则强制停止
+            if (scope[id]._forceStop) {
+                scope.forceStopCallBack(id, scope[_st]);
+                return false;
+            }
+
+            //保证两位小数的精确值
+            num = Number(num).toFixed(2);
+            num = Number(num);
+
+            distance = distance.toFixed(2);
+            distance = Number(distance);
+
+            var position = Number(translateY) + Number(direction + num);
+
+            if (distance == num) {
+
+                scope._$(id).style.transform = "translateY(" + position + "px )";
+                var index = Math.abs(position / scope._lineHeight);//
+                scope.selectIndex(id, index);
+
+                scope[id].moving = false;
+
+                //更新当前选中项的列表
+                scope.callbackOps(id, scope[_st]);
+
+            } else if (num > distance) {//当滚动的基本单位(_moveDistance)变化时，由于当前坐标+n*_moveDistance不可能=distance
+                //滚动越界或者未精确定位到对应选项时，自动回退
+                //num -= 0.01;
+                if (Math.abs(num - distance) <= 1) {
+                    num = distance;
+
+                    //更新当前选中项的列表
+                    position = Number(translateY) + Number(direction + num);
+                    var index = Math.abs(position / scope._lineHeight);
+
+                    scope.selectIndex(id, index);
+                    scope.callbackOps(id, scope[_st]);
+                    scope[id].moving = false;
+                } else {
+                    num -= 1;
+
+                    scope[id].moving = true;
+                    position = Number(translateY) + Number(direction + num);
+                }
+
+
+                scope._$(id).style.transform = "translateY(" + position + "px )";
+
+
+
+            } else {
+
+                num += scope._moveDistance;
+
+                scope._$(id).style.transform = "translateY(" + position + "px )";
+                scope[id].moving = true;
+
+            }
+        }, 1000 / this._moveRate)//控制滚动速度
+
+    }
+    /*自动贴合停止*/
+    picker.prototype.autoFitStop = function (id, st) {
+        clearInterval(st);
+        this[id]._forceStop = false;//关闭强制停止事件
+        this.onScrollEndCallBack(id);
+    }
+    /*滚动停止时回调*/
+    picker.prototype.onScrollEndCallBack = function (id) {
+        //console.log(this.getSelectOptionsList())
+        //console.log("onScrollEndCallBack-" + id)
+    }
+    /*选中项改变时回调*/
+    picker.prototype.onSelectChangedCallBack = function (id) {
+        //console.log(this.getSelectOptionsList())
+        //console.log("onSelectChangedCallBack-" + id)
+    }
+    /*强制停止滚动回调*/
+    picker.prototype.forceStopCallBack = function (id, st) {
+        clearInterval(st);
+        var scope = this;
+        var sss = setTimeout(function () {
+            scope[id]._forceStop = false;//关闭强制停止事件
+            clearTimeout(sss);
+        }, 500)
+
+
+        //this.onScrollEndCallBack(id);
+    }
+    /*滚动停止时自动回调*/
+    picker.prototype.callbackOps = function (id, st) {
+
+        clearInterval(st);
+
+        this[id]._forceStop = false;//关闭强制停止事件
+
+        if (this[id]._autoFit) {//自动贴合停止后无需再滚动
+            this[id]._autoFit = false;
+            this.autoFitStop(id, st);
+        } else {
+            this.autoStop(id);//自动Stop,可能还会再滚动一段距离
+        }
+
+        return this;
+    }
+    /*选中当前滚动到中间的元素,id为当前picker的ul的id*/
+    picker.prototype.selectIndex = function (id, index) {
+        this.removeSelect(id);
+        var sId = id + "-" + index;
+        this.initSelect(sId, index);
+    }
+    /*移除当前picker的选中元素*/
+    picker.prototype.removeSelect = function (id) {
+        var index = this._$(id).getAttribute("selectIndex");
+        this._$(id + "-" + index) && this._$(id + "-" + index).setAttribute("class", "")
+    }
+    /*滚动到上一个*/
+    picker.prototype.scrollPrev = function (id) {
+        var selectIndex = this._$(id).getAttribute("selectIndex");
+        var index = parseInt(selectIndex) - 1;//向上为负
+        var check = this.checkIndex(id, index);
+        check && this.scrollToIndex(id, index);
+        return this;
+    }
+    /*滚动到下一个*/
+    picker.prototype.scrollNext = function (id) {
+        var selectIndex = this._$(id).getAttribute("selectIndex");
+        var index = parseInt(selectIndex) + 1;//向下为正
+        var check = this.checkIndex(id, index);
+        check && this.scrollToIndex(id, index);
+        return this;
+    }
+    /*滚动到第index个元素，index从0开始，*/
+    picker.prototype.scrollToIndex = function (id, index) {
+
+        var check = this.checkIndex(id, index);
+        if (!check)return false;
+
+        var startPosition = (this._$(id).style.transform.split("translateY(")[1]).split("px)")[0];
+        var endPosition = -this._lineHeight * index;//停止位置
+
+        this.scrollY(id, endPosition, startPosition);
+
+        return this;
+
+    }
+    /*根据越界后的阻力计算越界后移动距离*/
+    picker.prototype.getReallyEndY = function (id, endY) {
+
+        var _max = this[id].maxMoveDistance;
+        var absEndY = Math.abs(endY);
+
+        if (this._resistance == 1) {//阻力无穷大时
+            if (absEndY > _max && endY < 0) {
+                endY = -_max
+            } else if (endY > 0) {
+                endY = 0
+            }
+
+        } else if (this._resistance > 0 && this._resistance < 1) {//阻力
+
+            if (absEndY > _max && endY < 0) {
+                endY = -_max - (absEndY - _max) * (1 - this._resistance)
+            } else if (endY > 0) {
+                endY = endY * (1 - this._resistance);
+            }
+        }
+
+        return Number(endY).toFixed(2);
+    }
+    /*y轴方向的移动,startY 起始位置 endY 停止位置*/
+    picker.prototype.scrollY = function (id, endY, startY) {
+
+        //startY <=0
+        var distance = Math.abs(startY) - Math.abs(endY);
+        var direction = distance >= 0 ? "+" : "-";//向上滚动为负
+
+        //兼容从零开始向下滚动越界
+        if (startY > 0) direction = "-";
+
+        //限制移动距离
+        distance = Math.abs(distance);
+
+        this.slideY(id, distance, direction, startY);
+
+    }
+    /*校验越界，id为当前picker的id，index为将要滚动到的index*/
+    picker.prototype.checkIndex = function (id, index) {
+
+        //界限参数获取
+        var minIndex = 0,
+            selectIndex = this._$(id).getAttribute("selectIndex"),
+            maxIndex = this[id].maxIndex;
+
+
+        //处理越界
+        if (index == selectIndex) {//当前位置，校准位置
+
+            var translateY = (this._$(id).style.transform.split("translateY(")[1]).split("px)")[0];
+            var shouldBeY = -this._lineHeight * index;
+            //console.log(id + "translateY " + translateY + " shouldBeY " + shouldBeY);
+
+            if (Number(translateY).toFixed(2) == Number(shouldBeY).toFixed(2)) {
+                //console.log(id + " 当前位置精准无需移动!  startID " + selectIndex + " toIndex " + index);
+                return false;
+            }
+
+
+        } else if (index < minIndex) {//超出滚动范围
+            //console.warn(id + "滚动范围越界!");
+            index = 0
+        } else if (index > maxIndex) {
+            index = maxIndex;
+        }
+        return true;
+    }
+    /*滚动到第一个元素*/
+    picker.prototype.scrollFirst = function (id) {
+        this.scrollToIndex(id, 0);
+        return this;
+    }
+    /*滚动到最后一个元素,id为单个picker的id*/
+    picker.prototype.scrollLast = function (id) {
+        var maxIndex = this[id].maxIndex;
+        this.scrollToIndex(id, maxIndex);
+        return this;
+    }
+    /*定时器控制器*/
+    picker.prototype.setTimerControl = function () {
+        this.__timer = 0;
+    };
+    /*自动停止(匀减速运动)*/
+    picker.prototype.autoStop = function (id) {
+
+        var ratio = this.getMoveRatio(id);
+        this.resetMoveRatio(id);
+        var fza = this._fza;
+        var direction = ratio > 0 ? "+" : "-";
+
+        this.slideSlowness(id, Math.abs(ratio), fza, direction);
+
+    }
+    /*自动贴近最近的一个index元素*/
+    picker.prototype.autoFit = function (id) {
+
+        var fitIndex = this.getFitIndex(id);
+        this[id]._autoFit = true;
+
+        this.scrollToIndex(id, fitIndex)
+    }
+    /*获取当前距离最近的Index*/
+    picker.prototype.getFitIndex = function (id) {
+
+        var translateY = this._$(id).style.transform.split("translateY(")[1].split("px)")[0];
+        var maxIndex = this[id].maxIndex
+        var fitIndex;
+
+        //添加移动系数
+        translateY = parseInt(translateY);
+
+        if (translateY < 0 && Math.abs(translateY) <= this._lineHeight * maxIndex) {
+
+            fitIndex = parseInt(Math.abs(translateY) / this._lineHeight) + parseInt((Math.abs(translateY) % this._lineHeight) * 2 / this._lineHeight);
+
+            if (fitIndex > maxIndex) {
+                fitIndex = maxIndex;
+            } else {
+                //console.log(id + " AutoFit-1-0 " + fitIndex)
+            }
+
+        } else if (translateY > 0) {
+            fitIndex = 0;
+            //console.log(id + " AutoFit-2 " + fitIndex)
+        } else if (Math.abs(translateY) > this._lineHeight * maxIndex) {
+            fitIndex = maxIndex;
+            //console.log(id + " AutoFit-3 " + fitIndex)
+        } else {
+            fitIndex = 0;
+            //console.log(id + " AutoFit-4 " + fitIndex)
+        }
+        return parseInt(fitIndex);
+    }
+    /*顶部反弹（自动贴合）*/
+    picker.prototype.autoFitFirst = function (id) {
+        this.scrollFirst(id);
+    }
+    /*底部反弹（自动贴合）*/
+    picker.prototype.autoFitLast = function (id) {
+        this.scrollLast(id);
+    }
+    /*强制停止滚动*/
+    picker.prototype.forceStop = function (id) {
+        this[id]._forceStop = true;
+    }
+    /*停止所有picker的滚动*/
+    picker.prototype.stopAll = function () {
+        var pickerList = this._pickerIdList;
+
+        this.destroyALLInterval();
+
+        for (var i = 0; i < pickerList.length; i++) {
+            this.forceStop(pickerList[i]);
+        }
+    }
+    /*当前选中项的值*/
+    picker.prototype.getSelectOptionsList = function (type) {
+        var selectIdList = this.getSelectIdList();
+
+        var options = [];
+        for (var i = 0; i < selectIdList.length; i++) {
+            var txt = this._$(selectIdList[i]).innerText;
+            options.push(txt)
+        }
+        if (type == "str") {
+            return options.join(this._character)
+        } else {
+            return options
+        }
+    }
+    /*当前选中的index*/
+    picker.prototype.getSelectIndexList = function () {
+        var idList = this._pickerIdList;
+        var indexList = [];
+        for (var i = 0; i < idList.length; i++) {
+            var sIndex = this._$(idList[i]).getAttribute("selectIndex");
+            indexList.push(sIndex);
+        }
+        return indexList;
+    }
+    /*当前选中项的id*/
+    picker.prototype.getSelectIdList = function () {
+        var idList = this._pickerIdList;
+        var indexList = this.getSelectIndexList();
+        var selectIdList = [];
+        for (var i = 0; i < idList.length; i++) {
+            var sId = idList[i] + "-" + indexList[i];
+            selectIdList.push(sId);
+        }
+        return selectIdList;
+    }
+    /*初始化所有picker的绑定事件*/
+    picker.prototype.initBindEvent = function () {
+        var idList = this._pickerIdList;
+        for (var i = 0; i < idList.length; i++) {
+            this.bindEvent(idList[i]);
+        }
+    }
+    /*绑定事件 mousemove, mouseout mousedown leftclick*/
+    picker.prototype.bindEvent = function (id) {
+
+        var touch = ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+
+        /*PC端拖动*/
+        if (!touch) {
+            //绑定鼠标左键点击事件到触发leftMouseDown
+            this.bindMouseDown(id, this.leftMouseDown);
+            //绑定鼠标左键点击事件mouseup 或者 mouseout
+            this.BindMouseEnd(id);
+
+        } else {
+            /*mobile端拖动*/
+            this.BindTouchEvent(id);
+
+        }
+
+
+    }
+
+
+    /*手机端touchmove touchstart touchend*/
+    picker.prototype.BindTouchEvent = function (id) {
+        var scope = this;
+        this._$(id).addEventListener("touchstart", function (e) {
+
+            var pBefore = scope.getMouseBefore(id, e);
+            scope[id].startY = pBefore.y;
+            scope[id].firstStartY = pBefore.y;
+
+            scope[id].moving && scope.forceStop(id);
+            scope[id].startTime = new Date().getTime();
+
+            scope.stopBubble(e)
+        }, false)
+
+        this._$(id).addEventListener("touchmove", function (e) {
+
+
+            var pAfter = scope.getMouseAfter(id, e);
+            scope[id].endY = pAfter.y;
+            scope[id].moving && scope.forceStop(id);
+            var info = scope.getMoveInfo(id);//获取移动的详细信息
+            scope.followScroll(id, info);//跟随鼠标
+
+            scope.stopBubble(e)
+        }, false)
+
+        this._$(id).addEventListener("touchend", function (e) {
+
+            var pAfter = scope.getMouseAfter(id, e);
+            scope[id].endTime = new Date().getTime();
+            scope[id].lastEndY = pAfter.y;//用户只是点击未拖动时，
+            scope[id]._forceStop=false;
+            scope.autoStop(id);//滚动自动停止
+            scope.stopBubble(e)
+        }, false)
+
+    }
+    /*阻止手机端全局拖动事件*/
+    /* picker.prototype.removeTouch = function (id) {
+    
+     }
+     */
+    /*鼠标left up或者 mouseout*/
+    picker.prototype.BindMouseEnd = function (id) {
+        var scope = this;
+        this._$(id).onmouseup = function (e) {
+            if (scope[id].leftDown)
+                scope.leftMouseUp(e, id, scope);
+        }
+        this._$(id).onmouseleave = function (e) {
+            if (scope[id].leftDown)
+                scope.leftMouseUp(e, id, scope);
+        }
+    }
+    /*绑定鼠标移动事件*/
+    picker.prototype.bindMouseMove = function (id) {
+        var scope = this;
+        this._$(id).onmousemove = function (e) {
+            scope[id].moving && scope.forceStop(id);
+            if (scope[id].leftDown) {
+                var pAfter = scope.getMouseAfter(id, e);
+                scope[id].endY = pAfter.y;
+
+                var info = scope.getMoveInfo(id);//获取移动的详细信息
+                scope.followScroll(id, info);//跟随鼠标
+
+            } else {
+                scope.autoStop(id);
+                scope.removeMouseMove(id);
+            }
+        }
+    }
+    /*获取移动系数*/
+    picker.prototype.getMoveRatio = function (id) {
+        var startTime = this[id].startTime;
+        var endTime = this[id].endTime;
+        var startY = this[id].firstStartY;
+        var endY = this[id].lastEndY || startY;
+
+        //移动系数（单位时间内的移动距离,或者说是平均速度）
+        //console.log(" startTime " + startTime + " endTime " + endTime + " startY " + startY + " endY " + endY);
+        var moveRatio = /*Math.abs*/-((startY - endY) / (endTime - startTime)) * this._moveDouble;
+
+        //移动系数
+        this[id]._moveRatio = moveRatio;
+        //console.log("移动系数：：：：：：" + moveRatio + " startTime " + startTime + " endTime " + endTime);
+
+        return moveRatio || 0;
+    }
+    /*移动系数清空*/
+    picker.prototype.resetMoveRatio = function (id) {
+
+        this[id]._moveRatio = 0;
+    }
+    /*移除鼠标移动事件*/
+    picker.prototype.removeMouseMove = function (id) {
+        this._$(id).onmousemove = null;
+    }
+    /*跟随鼠标拖动*/
+    picker.prototype.followScroll = function (id, p) {
+
+        var distance = p.beforeY - p.afterY;
+        var startPosition = (this._$(id).style.transform.split("translateY(")[1]).split("px)")[0];
+
+        var touch = ('ontouchstart' in window) ||
+            window.DocumentTouch && document instanceof DocumentTouch;
+
+        var endPosition;
+        if (!touch) {
+            endPosition = startPosition - distance;//停止位置
+        } else {
+            endPosition = startPosition - distance;//停止位置
+        }
+
+        //添加越界阻力逻辑
+        endPosition = this.getReallyEndY(id, endPosition);
+
+        this._$(id).style.transform = "translateY(" + endPosition + "px )";
+        this[id].startY = p.afterY;
+
+    }
+    /*鼠标左键点击触发事件,注意scope*/
+    picker.prototype.leftMouseDown = function (e, id, scope) {
+
+        var pStart = scope.getMouseBefore(id, e);
+        scope[id].leftDown = true;//鼠标左键点击状态，此状态下禁止autoFit的滚动
+        scope[id].moving && scope.forceStop(id);
+        scope[id].startY = pStart.y;
+        scope[id].firstStartY = pStart.y;
+        scope[id].startTime = new Date().getTime();
+        //绑定鼠标移动事件
+        scope.bindMouseMove(id, this.getMouseMove);
+
+    }
+    /*鼠标左键弹起触发事件，注意scope*/
+    picker.prototype.leftMouseUp = function (e, id, scope) {
+
+        var pAfter = scope.getMouseAfter(id, e);
+        scope[id].leftDown = false;//鼠标左键点击状态
+        scope[id].endTime = new Date().getTime();
+        scope[id].lastEndY = pAfter.y;
+        scope[id]._forceStop=false;
+        scope.removeMouseMove(id);//移除绑定事件
+        scope.autoStop(id);//自动停止
+
+    }
+    /*绑定鼠标左键（右键，中间滑轮）点击事件*/
+    picker.prototype.bindMouseDown = function (id, left, middle, right) {
+
+        var scope = this;//此处
+        var args = [].slice.call(arguments);
+
+        args[0] = function () {
+        };
+
+        args[1] = args[1] || args[0];
+        args[2] = args[2] || args[0];
+        args[3] = args[3] || args[0];
+
+        //绑定mousedown事件
+        scope._$(id).onmousedown = function (e) {
+            e = e || window.event;
+            var button = e.button;
+            if (!e.which && isFinite(button)) {
+                e.which = [0, 1, 3, 0, 2, 0, 0, 0][button];//0现在代表没有意义
+            }
+            //备注：假如此处调用leftMouseDown 所以要传递scope过去，否则leftMouseDown中的this指向改变
+            args[e.which](e, id, scope);
+        }
+    }
+    /*获取鼠标或手指移动范围*/
+    picker.prototype.getMoveInfo = function (id) {
+
+        var move = {
+            beforeY: this[id].startY,
+            afterY: this[id].endY
+        };
+
+        return move;
+    }
+    /*根据e获取鼠标当前坐标*/
+    picker.prototype.getMousePosition = function (e) {
+        var touch = ('ontouchstart' in window)
+            || window.DocumentTouch && document instanceof DocumentTouch;
+
+        var p = {};
+
+        if (!touch) {
+            var x = e.pageX
+                || (e.clientX + (document.documentElement.scrollLeft || document.body.scrollLeft));
+
+            var y = e.pageY
+                || (e.clientY + (document.documentElement.scrollTop || document.body.scrollTop));
+
+            p = {'x': x, 'y': y};
+        } else {
+            var pos = e.changedTouches[0];     //touches数组对象获得屏幕上所有的touch，取第一个touch
+            p = {"x": pos.pageX, "y": pos.pageY};    //取第一个touch的坐标值
+        }
+
+        return p;
+
+    }
+    /*获取鼠标点击左键之后的坐标*/
+    picker.prototype.getMouseBefore = function (id, e) {
+        return this.getMousePosition(e);
+    }
+    /*获取鼠标点击右键或者移出picker范围边界之后的坐标*/
+    picker.prototype.getMouseAfter = function (id, e) {
+        return this.getMousePosition(e);
+    }
+
+  /*  export  default {
+        create: picker
+    }
+*/
+    var viewData = {
+        data: {
+            year: {
+                cid: "year",// 当前列ID
+                suffix: "年",//当前列后缀
+                list: ["2016", "2017", "2018", "2019", "2020", "2016", "2017", "2018", "2019", "2020", "2016", "2017", "2018", "2019", "2020", "2016", "2017", "2018", "2019", "2020", "2016", "2017", "2018", "2019", "2020"]
+            },
+            month: {
+                cid: "month",
+                suffix: "月",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+            },
+            day: {
+                cid: "day",
+                suffix: "日",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
+            },
+            hour: {
+                cid: "hour",
+                suffix: "时",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
+
+            },
+            minute: {
+                cid: "minute",
+                suffix: "分",
+                list: ["1", "2", "3"]
+            },
+            second: {
+                cid: "second",
+                suffix: "秒",
+                list: ["1", "2", "3"]
+            },
+            divided: {
+                cid: "divided",
+                suffix: "",
+                list: ["上午", "下午"]
+            }
+        }
+    }
+    var positionData = {
+        data: {
+            sheng: {
+                cid: "sheng",// 当前列ID
+                suffix: "省",//当前列后缀
+                list: ["河南", "河北", "江苏", "四川", "山东"]
+            },
+            shi: {
+                cid: "shi",
+                suffix: "市",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+            },
+            xian: {
+                cid: "xian",
+                suffix: "县",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
+            },
+        }
+    }
+    var shouruData = {
+        data: {
+            sheng: {
+                cid: "sheng",// 当前列ID
+                suffix: "省",//当前列后缀
+                list: ["河南", "河北", "江苏", "四川", "山东"]
+            },
+            shi: {
+                cid: "shi",
+                suffix: "市",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+            },
+            xian: {
+                cid: "xian",
+                suffix: "县",
+                list: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
+            },
+        }
+    }
+    //初始化date-picker
+    var _pk = new picker("date-picker", {"viewData": viewData, "character": "-", "lineHeight": 48, "showLines": 3});//注意 只是启用链式调用语法，并非是等前面的执行完毕才执行
+    var _ppk = new picker("position-picker", {
+        "viewData": positionData,
+        "character": "-",
+        "lineHeight": 48,
+        "showLines": 3
+    });
+    var _pppk = new picker("shouru-picker", {"viewData": shouruData, "lineHeight": 48, "showLines": 3});
+    //_pk.scrollNext("date-picker-month");//滚动到下一月
+    /* var i = 0;*/
+    /*setInterval(function () {
+     if(i>12){
+     _pk.scrollToIndex("date-picker-month", 0);
+     i=0;
+     }else{
+     i++;
+     _pk.scrollToIndex("date-picker-month", i);
+
+     }
+
+     },1000)*/
+
+    /*.scrollToIndex("date-picker-minute", 2)
+     .scrollToIndex("date-picker-minute", 2)
+     .scrollNext("date-picker-second")//滚动到上一个
+     .scrollLast("date-picker-year")//滚动到底部
+     .scrollLast("date-picker-hour")//滚动到底部
+     //console.log(_pk._selectOptions)
+
+     var st = setTimeout(function () {
+     _pk.scrollLast("date-picker-day")
+     .scrollNext("date-picker-divided")
+     .scrollPrev("date-picker-minute")
+     .scrollToIndex("date-picker-month", 1)
+     .scrollFirst("date-picker-hour")//滚动到头部
+     .scrollPrev("date-picker-second", 19)//滚动到头部
+     //console.log(_pk._selectOptions)
+
+     clearTimeout(st)
+     }, 5000)
+
+     var st1= setTimeout(function () {
+     _pk.stopAll()
+     },5800)*/
+    /*    },
+     components: {}
+     }*/
+</script>
+
+</html>
