@@ -4,10 +4,12 @@
 ##1 npm install
 ##2 node map
 
+# 项目暂停中，先去学习几个框架先
+
 #  首先全局安装gulp
    npm install -g gulp
 
-#  开发使用
+#  开发使用 参看build/gulpfile.js
 
 ##develop:  gulp
 
