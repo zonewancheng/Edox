@@ -1,8 +1,8 @@
 /**
- * Created by oospace on 2016/9/20.
+ * Created by zone on 2016/9/20.
  * 自动配置创建HTML模板文件和对应的页面文件夹
  * 需求模块 fs
- * 在需求目录下执行 node .js
+ * 在需求目录下执行 node map.js
  */
 var fs = require("fs");
 
@@ -43,7 +43,7 @@ var headerReplace = [
 //需要创建的文件及对应标题列表
 var pageList = { //页面列表
     //模块A
-    "index": "首页",
+    "index": "Edox 首页",
     //模块B
     "login": "登录",
     //模块C
@@ -51,16 +51,16 @@ var pageList = { //页面列表
     //模块D
     "logout":"退出"
 };
-var basePath = "../src/";//文件路径
+var basePath = "../src/";//生成文件放置的路径
 var reCreate = true;//已有的文件是否重新创建，暂未打算支持， 可扩展
 
 //文件路径不统一覆盖
 for(var key in pageList){
-    if (fs.existsSync(basePath+"pages/"+key)) {
-        console.log("已创建过"+basePath+"pages/"+key+"目录");
+    if (fs.existsSync(basePath+key)) {
+        console.log("已创建过"+basePath+ key+"目录");
     } else {
-        fs.mkdirSync(basePath+"pages/"+key);
-        console.log('目录'+basePath+"pages/"+key+'已创建成功\n');
+        fs.mkdirSync(basePath+ key);
+        console.log('目录'+basePath+ key+'已创建成功\n');
     }
 }
 
@@ -70,19 +70,19 @@ for(var key in pageList){
 //模版文件统一重新覆盖
 for (var key in pageList) {
     console.log(key);
-    var template = "<!DOCTYPE html>\n" +
+    var template =
         "<html>\n" +
-        "<head>\n" +
-        "<title>" + pageList[key] + "</title>\n" +
-        headerReplace.join("") + "\n" +
-        head + "\n" +
-        "</head>\n" +
-        "<body>\n" +
-        body + "\n" +
-        "</body>\n" +
-        footerReplace.join("") + "\n" +
-        foot +
-        other + "\n" +
+            "<head>\n" +
+            "<title>" + pageList[key] + "</title>\n" +
+            headerReplace.join("") + "\n" +
+            head + "\n" +
+            "</head>\n" +
+            "<body>\n" +
+            body + "\n" +
+            "</body>\n" +
+            footerReplace.join("") + "\n" +
+            foot +
+            other + "\n" +
         "</html>";
     //创建文件
     fs.writeFile(basePath + key + ".html", template, function (err) {

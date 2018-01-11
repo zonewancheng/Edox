@@ -1,5 +1,5 @@
 /**
- * Author: fishCat
+ * Author: zone
  * Date:   2017/8/17
  * Email:  oosapce@gmail.com
  */
@@ -8,16 +8,25 @@ var $ = Edox = function () {
 }
 epx = Edox.prototype;
 epx.app = function () {
-    
+
 }
 epx.dom = function () {
 
 }
-epx.template =function () {
-    
+epx.template = function () {
+
 }
-epx.mvx =function () {
-    
+epx.mvx = function () {
+
+}
+epx.router = function () {
+
+}
+epx.require = function () {
+
+}
+epx.extend = function () {
+
 }
 epx.bom = function () {
 

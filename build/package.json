@@ -42,16 +42,12 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^2.1.2",
     "jshint": "^2.9.5",
-    "path": "^0.12.7",
-    "precss": "^1.4.0",
-    "promise": "^7.1.1",
-    "run-sequence": "^1.2.2",
-    "through2": "^2.0.3",
     "jshint-stylish": "^2.2.1",
     "path": "^0.12.7",
     "precss": "^1.4.0",
     "promise": "^7.1.1",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "through2": "^2.0.3"
   },
   "dependencies": {},
   "jshintConfig": {
