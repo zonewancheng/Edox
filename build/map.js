@@ -112,7 +112,3 @@ for (var key in pageList) {
 // fs.stat('bb.txt', function(err, stat){
 //     console.log(stat);
 // });
-// // 判断文件是否存在
-// fs.exists('bb.txt', function( exists ){
-//     console.log( exists ) ;
-// }) ;

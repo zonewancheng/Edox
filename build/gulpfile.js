@@ -94,7 +94,40 @@ gulp.task('css-dev', function () {
         .pipe(gulp.dest(buildPath + "css/"))
 
 })
+// 编译less,并压缩css输出到目标目录
+gulp.task('pages-css-dev', function () {
+    return gulp.src(developPath + "pages/**/*.less")
+        .pipe(less())
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            var css_filename = name.split(".")[0];
+            var content = file.contents.toString();
+            fs.writeFile("../dist/css/"+css_filename+".css",content,function () {
 
+            });
+            cb()
+        }))
+})
+// 编译less,并压缩css输出到目标目录
+gulp.task('pages-css', function () {
+    return gulp.src(developPath + "pages/**/*.less")
+        .pipe(sourcemaps.init())
+        .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+        .pipe(less())
+        .pipe(minifycss())
+        .pipe(sourcemaps.write())
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            var css_filename = name.split(".")[0];
+            var content = file.contents.toString();
+            fs.writeFile("../dist/css/"+css_filename+".css",content,function () {
+
+            });
+            cb()
+        }))
+})
 // 编译less,并压缩css输出到目标目录
 gulp.task('css-dev', function () {
     return gulp.src(developPath + "css/**")
@@ -150,6 +183,45 @@ gulp.task('js-dev', function () {
         .pipe(gulp.dest(buildPath + "js/"))
 });
 
+gulp.task('pages-js-dev', function () {
+    return gulp.src((developPath + 'pages/**/*.js'))
+        .pipe(babel({
+            presets: [es2015]
+        }))
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            var js_filename = name.split(".")[0];
+            var content = file.contents.toString();
+            fs.writeFile("../dist/js/"+js_filename+".js",content,function () {
+
+            });
+            cb()
+        }))
+});
+gulp.task('pages-js', function () {
+    return gulp.src((developPath + 'pages/**/*.js'))
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: [es2015]
+        }))
+        .pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
+        //.pipe(jshint.reporter("default"))
+        .pipe(jshint.reporter(stylish))
+        .pipe(uglify({mangle: false}))
+        .pipe(sourcemaps.write())
+        .on('error', function (e) {
+            console.log(e);
+        })
+        .pipe(through.obj(function (file, enc, cb) {
+            var name = rpath.basename(file.path);
+            var js_filename = name.split(".")[0];
+            var content = file.contents.toString();
+            fs.writeFile("../dist/js/"+js_filename+".js",content,function () {
+
+            });
+            cb()
+        }))
+});
 // 拷贝 html
 gulp.task('html', function () {
     var options = {
@@ -174,13 +246,13 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            console.log("path: "+name)
+            //console.log("path: "+name)
             name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
             var that = this;
             //console.log(process.cwd())
             fs.readFile(name,"utf8",function (err,txt) {
                 if(err){
-                    console.warn(name+".html"+" 不存在已跳过")
+                    console.warn(name+" 不存在已跳过")
                 }else{
                     //console.log(txt)
                     var content = file.contents.toString();
@@ -372,23 +444,23 @@ gulp.task('server', function () {
         server: buildPath,
     });
     gulp.watch(developPath + "**/*").on('change', function () {
-        runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev"], "reload");
+        runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");
     });
 });
 
 
 //本地开发执行默认任务
 gulp.task('default', function () {
-    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev"], "server");
+    runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev", "images-dev"], "server");
 });
 
 //执行打包发布任务(不压缩)
 gulp.task('develop', function () {
-    runSequence("clean", ["css-dev", "html-dev", "js-dev", "images-dev"]);
+    runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev", "images-dev"]);
 });
 
 //执行打包发布任务
 gulp.task('product', function () {
-    runSequence("clean", ["html", "css", "js", "images"]);
+    runSequence("clean", ["html", "css", "js","pages-js" ,"pages-css","images"]);
 });
 
