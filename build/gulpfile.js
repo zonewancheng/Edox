@@ -174,12 +174,22 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "感谢使用Edox";
-            var content = file.contents.toString();
-            content = content.replace('<!--_BODY_CONTAINER_-->', name);
-            file.contents = new Buffer(content);
-            this.push(file);
-            cb();
+            console.log("path: "+name)
+            name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
+            var that = this;
+            //console.log(process.cwd())
+            fs.readFile(name,"utf8",function (err,txt) {
+                if(err){
+                    console.warn(name+".html"+" 不存在已跳过")
+                }else{
+                    //console.log(txt)
+                    var content = file.contents.toString();
+                    content = content.replace('<!--_BODY_CONTAINER_-->', txt);
+                    file.contents = new Buffer(content);
+                    that.push(file);
+                }
+                cb();
+            })
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
@@ -192,7 +202,7 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            name = "<script src='" + 'js/points.js' + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -222,12 +232,23 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "感谢使用Edox";
-            var content = file.contents.toString();
-            content = content.replace('<!--_BODY_CONTAINER_-->', name);
-            file.contents = new Buffer(content);
-            this.push(file);
-            cb();
+            console.log("path: "+name)
+            name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
+            var that = this;
+            //console.log(process.cwd())
+            fs.readFile(name,"utf8",function (err,txt) {
+                if(err){
+                    console.warn(name+".html"+" 不存在已跳过")
+                }else{
+                    //console.log(txt)
+                    var content = file.contents.toString();
+                    content = content.replace('<!--_BODY_CONTAINER_-->', txt);
+                    file.contents = new Buffer(content);
+                    that.push(file);
+                }
+                cb();
+            })
+
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
@@ -240,7 +261,7 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            name = "<script src='" + 'js/points.js' + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -249,7 +270,13 @@ gulp.task('html-dev', function () {
         }))
         .pipe(gulp.dest(buildPath))
 });
-
+// gulp.task('pages-dev',function () {
+//     return gulp.src([developPath + '/pages/**/*.html'])
+//         .pipe(through.obj(function (file, enc, cb) {
+//
+//         }))
+//
+// });
 // 图片压缩  输出到目标目录
 gulp.task('images', function () {
     return gulp.src([developPath + 'imgs/*.*'])
@@ -328,7 +355,9 @@ gulp.task('Edox-dev', function () {
 gulp.task('clean', function () {
     var filePathList = readFileNameList(buildPath);
     for (var i = 0; i < filePathList.length; i++) {
-        fs.unlink(filePathList[i]);
+        fs.unlink(filePathList[i],function (err) {
+            if(err){}
+        });
     }
     return true;
 })

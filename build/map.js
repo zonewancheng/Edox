@@ -30,10 +30,10 @@ var headerReplace = [
         '<link rel="icon" href="favicon.ico" type="image/x-icon" />',
         '<link rel=dns-prefetch href="" >',
         '<link rel=dns-prefetch href="" >',
-        '<link href="css/edox.core.css" >',
+        '<link href="css/zui.css" >',
     ],
     footerReplace = [
-        '<script src="js/edox.core.js"></script>'
+        '<script async defer type="text/javascript" src="js/vue.js"></script>'
     ],
     bodyReplace = [
         '<div id="Edox-container">',
@@ -56,10 +56,10 @@ var reCreate = true;//已有的文件是否重新创建，暂未打算支持， 
 
 //文件路径不统一覆盖
 for(var key in pageList){
-    if (fs.existsSync(basePath+key)) {
+    if (fs.existsSync(basePath+"pages/"+key)) {
         console.log("已创建过"+basePath+ key+"目录");
     } else {
-        fs.mkdirSync(basePath+ key);
+        fs.mkdirSync(basePath+"pages/"+key);
         console.log('目录'+basePath+ key+'已创建成功\n');
     }
 }
