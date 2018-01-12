@@ -304,7 +304,7 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            console.log("path: "+name)
+            //console.log("path: "+name)
             name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
             var that = this;
             //console.log(process.cwd())
