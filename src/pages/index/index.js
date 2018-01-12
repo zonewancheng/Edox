@@ -2,7 +2,9 @@
     const app = new Vue({
         el:"#App",
         data:function () {
-            return {}
+            return {
+                content:"感谢使用Edox"
+            }
         }
     });
 })()
