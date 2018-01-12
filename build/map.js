@@ -33,7 +33,7 @@ var headerReplace = [
         '<link href="css/zui.css" >',
     ],
     footerReplace = [
-        '<script async defer type="text/javascript" src="js/vue.js"></script>'
+        '<script  type="text/javascript" src="js/vue.js"></script>'
     ],
     bodyReplace = [
         '<div id="Edox-container">',

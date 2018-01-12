@@ -265,7 +265,7 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_FOOT_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -274,7 +274,7 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script src='" + 'js/points.js' + "'></script>";
+            name = "<script async defer src='" + 'js/points.js' + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -324,7 +324,7 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_FOOT_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -333,7 +333,7 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script src='" + 'js/points.js' + "'></script>";
+            name = "<script async defer src='" + 'js/points.js' + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -382,9 +382,9 @@ gulp.task('Edox-dev', function () {
 
 gulp.task('js-dev', function () {
     return gulp.src((developPath + 'js/**'))
-        .pipe(babel({
-            presets: [es2015]
-        }))
+        // .pipe(babel({
+        //     presets: [es2015]
+        // }))
         .pipe(gulp.dest(buildPath + "js/"))
 });
 
