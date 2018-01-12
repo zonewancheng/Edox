@@ -30,7 +30,7 @@ var headerReplace = [
         '<link rel="icon" href="favicon.ico" type="image/x-icon" />',
         '<link rel=dns-prefetch href="" >',
         '<link rel=dns-prefetch href="" >',
-        '<link href="css/zui.css" >',
+        '<link rel="stylesheet" href="css/zui.css" >',
     ],
     footerReplace = [
         '<script  type="text/javascript" src="js/vue.js"></script>'

@@ -237,7 +237,7 @@ gulp.task('html', function () {
     return gulp.src([developPath + '*.html'])
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<link href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
+            name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
             var content = file.contents.toString();
             content = content.replace('<!--_HEAD_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -295,7 +295,7 @@ gulp.task('html-dev', function () {
     return gulp.src([developPath + '*.html'])
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<link href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
+            name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
             var content = file.contents.toString();
             content = content.replace('<!--_HEAD_CONTAINER_-->', name);
             file.contents = new Buffer(content);
