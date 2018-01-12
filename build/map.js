@@ -7,7 +7,7 @@
 var fs = require("fs");
 
 var head = "<!--_HEAD_CONTAINER_-->";
-var body = "<Edox><!--_BODY_CONTAINER_--></Edox>";
+var body = "<div id='eDox-container'><!--_BODY_CONTAINER_--></div>";
 var foot = "<!--_FOOT_CONTAINER_-->";
 var other = "<!--_OTHER_CONTAINER_-->";
 
@@ -69,7 +69,6 @@ for(var key in pageList){
 
 //模版文件统一重新覆盖
 for (var key in pageList) {
-    console.log(key);
     var template =
         "<html>\n" +
             "<head>\n" +
@@ -87,8 +86,8 @@ for (var key in pageList) {
     //创建文件
     fs.writeFile(basePath + key + ".html", template, function (err) {
         if (err) throw err;
-        console.log("生成模版"+basePath + key + ".html"+"页面");
     });
+    console.log("生成模版"+basePath + key + ".html");
 }
 
 //读取文件
