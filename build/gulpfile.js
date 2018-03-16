@@ -442,6 +442,7 @@ gulp.task('reload', function () {
 gulp.task('server', function () {
     browserSync.init({
         server: buildPath,
+        index:"index.html"
     });
     gulp.watch(developPath + "**/*").on('change', function () {
         runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");

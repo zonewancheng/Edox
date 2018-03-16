@@ -33,8 +33,12 @@ var headerReplace = [
         '<link rel="stylesheet" href="css/zui.css" >',
     ],
     footerReplace = [
-        '<script  type="text/javascript" src="js/vue.js"></script>'
-    ],
+        '<script  type="text/javascript" src="js/vue.js"></script>',
+        '<script  type="text/javascript" src="js/vue-router.js"></script>',
+        '<script  type="text/javascript" src="js/router.js"></script>',
+        '<script  type="text/javascript" src="js/component.js"></script>'
+
+    ]
     bodyReplace = [
         '<div id="Edox-container">',
         '</div>'
@@ -42,6 +46,7 @@ var headerReplace = [
 
 //需要创建的文件及对应标题列表
 var pageList = { //页面列表
+    "app":"单页应用主页",
     //模块A
     "index": "Edox 首页",
     //模块B
@@ -49,7 +54,12 @@ var pageList = { //页面列表
     //模块C
     "register": "注册",
     //模块D
-    "logout":"退出"
+    "logout":"退出",
+    "import":"导入",
+    "passenger":"添加Vue",
+    "home":"主页",
+    "newPage":"新页面"
+
 };
 var basePath = "../src/";//生成文件放置的路径
 var reCreate = true;//已有的文件是否重新创建，暂未打算支持， 可扩展
@@ -59,8 +69,27 @@ for(var key in pageList){
     if (fs.existsSync(basePath+"pages/"+key)) {
         console.log("已创建过"+basePath+ key+"目录");
     } else {
-        fs.mkdirSync(basePath+"pages/"+key);
-        console.log('目录'+basePath+ key+'已创建成功\n');
+        fs.mkdir(basePath+"pages/"+key,function () {
+            console.log('目录'+basePath+"pages/"+key+'已创建成功\n');
+
+            //生成模版文件
+            var js_template="";
+            var less_template="";
+            var tpl_html_template ="<div id='mainPage'></div>"
+            fs.writeFile(basePath+"pages/"+key+"/"+key+".js", js_template, function (err) {
+                if (err) throw err;
+            });
+            fs.writeFile(basePath+"pages/"+key+"/"+key+".less", less_template, function (err) {
+                if (err) throw err;
+            });
+            fs.writeFile(basePath+"pages/"+key+"/tpl."+key+".html", tpl_html_template, function (err) {
+                if (err) throw err;
+            });
+
+        });
+
+
+
     }
 }
 

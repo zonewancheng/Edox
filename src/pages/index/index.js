@@ -1,10 +1,18 @@
 (function () {
-    const app = new Vue({
-        el:"#App",
+    var mainPage = new Vue({
+        el:"#mainPage",
         data:function () {
-            return {
-                content:"感谢使用Edox"
+            return{
+
+            }
+        },
+        methods: {
+            addBySelf:function () {
+                alert("1")
+            },
+            addBy12306:function () {
+                alert("2")
             }
         }
-    });
+    })
 })()
