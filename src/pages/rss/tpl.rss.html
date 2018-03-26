@@ -1,0 +1,13 @@
+<div id='mainPage'>
+    <ul class="z-article">
+        <template>
+            <li v-for="item in articleList">
+                <a :href="item.link"><h4 :title="item.title">{{item.title}}</h4></a>
+                <label v-html="item.author"></label>
+                <div class="mark">
+                    <span v-for=" mk in item.mark">{{mk}}</span>
+                </div>
+            </li>
+        </template>
+    </ul>
+</div>

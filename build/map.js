@@ -31,13 +31,14 @@ var headerReplace = [
         '<link rel="icon" href="favicon.ico" type="image/x-icon" />',
         '<link rel=dns-prefetch href="" >',
         '<link rel=dns-prefetch href="" >',
-        '<link rel="stylesheet" href="css/zui.css" >',
+        '<link rel="stylesheet" href="css/zui.css?v='+version+'" >',
     ],
     footerReplace = [
         '<script  type="text/javascript" src="js/vue.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>'
+        '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/rss-parser.js?v='+version+'"></script>'
 
     ]
     bodyReplace = [
@@ -59,7 +60,8 @@ var pageList = { //页面列表
     "import":"导入",
     "passenger":"添加Vue",
     "home":"主页",
-    "newPage":"新页面"
+    "newPage":"新页面",
+    "rss":"zone'rss reader"
 
 };
 var basePath = "../src/";//生成文件放置的路径
