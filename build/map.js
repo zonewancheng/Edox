@@ -10,6 +10,7 @@ var head = "<!--_HEAD_CONTAINER_-->";
 var body = "<div id='eDox-container'><!--_BODY_CONTAINER_--></div>";
 var foot = "<!--_FOOT_CONTAINER_-->";
 var other = "<!--_OTHER_CONTAINER_-->";
+var version = new Date().getTime();
 
 var headerReplace = [
         '<meta charset="UTF-8">',
@@ -33,10 +34,10 @@ var headerReplace = [
         '<link rel="stylesheet" href="css/zui.css" >',
     ],
     footerReplace = [
-        '<script  type="text/javascript" src="js/vue.js"></script>',
-        '<script  type="text/javascript" src="js/vue-router.js"></script>',
-        '<script  type="text/javascript" src="js/router.js"></script>',
-        '<script  type="text/javascript" src="js/component.js"></script>'
+        '<script  type="text/javascript" src="js/vue.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>'
 
     ]
     bodyReplace = [

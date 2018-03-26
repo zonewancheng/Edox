@@ -47,6 +47,7 @@ var clean = require('gulp-clean');
 
 var replace = require('gulp-replace');
 var through = require('through2');
+var version = new Date().getTime();
 
 //获取文件夹下所有的文件名字并返回一个数组
 var readFileNameList = function (path) {
@@ -237,7 +238,7 @@ gulp.task('html', function () {
     return gulp.src([developPath + '*.html'])
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
+            name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css?v='+version + "'>";
             var content = file.contents.toString();
             content = content.replace('<!--_HEAD_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -265,7 +266,7 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js?v='+version + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_FOOT_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -274,7 +275,7 @@ gulp.task('html', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script async defer src='" + 'js/points.js' + "'></script>";
+            name = "<script async defer src='" + 'js/points.js?v='+version + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -295,7 +296,7 @@ gulp.task('html-dev', function () {
     return gulp.src([developPath + '*.html'])
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css' + "'>";
+            name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css?v='+version + "'>";
             var content = file.contents.toString();
             content = content.replace('<!--_HEAD_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -324,7 +325,7 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js' + "'></script>";
+            name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js?v='+version + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_FOOT_CONTAINER_-->', name);
             file.contents = new Buffer(content);
@@ -333,7 +334,7 @@ gulp.task('html-dev', function () {
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
-            name = "<script async defer src='" + 'js/points.js' + "'></script>";
+            name = "<script async defer src='" + 'js/points.js?v='+version + "'></script>";
             var content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
