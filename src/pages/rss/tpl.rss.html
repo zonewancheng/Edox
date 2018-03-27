@@ -1,22 +1,35 @@
 <div id='mainPage'>
-    <ul class="z-article">
+    <section class="rss-menu">
         <template>
-            <li v-for="item in articleList">
-                <a :href="item.link"><h4 :title="item.title">{{item.title}}</h4></a>
-                <label v-html="item.author"></label>
-                <div class="mark">
-                    <span v-for=" mk in item.mark">{{mk}}</span>
-                </div>
-            </li>
-            <li>
-                <div class="loading">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </li>
+            <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
+                {{item.name}}
+            </a>
         </template>
-    </ul>
+    </section>
+    <section class="rss-article-list">
+        <template>
+            <div v-for="key in siteList">
+                <div :id="key.name" class="rss-title" v-html="key.name"></div>
+                <div v-if="!key.show" class="rss-article">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div  class="rss-article" v-for="item in key.articleList">
+                    <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
+                    <em v-html="item.date"></em>
+                    <label v-html="item.author"></label>
+                    <div class="mark">
+                        <span v-for=" mk in item.mark">{{mk}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </template>
+    </section>
 </div>

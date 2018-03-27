@@ -1,10 +1,54 @@
 body,html{
   background: #f9f9f9;
-  max-width: 600px;
+  max-width: 1080px;
   margin:0 auto;
   padding: 5px 0;
+  position: relative;
+  overflow-y:hidden;
+  user-select: none;
 }
-.z-article >li{
+.rss-menu{
+  position: absolute;
+  left:0px;
+  top:5px;
+  background: #fff;
+  .rss-menu-item{
+    background: #fff;
+    display: block;
+    color: #666;
+    font-size:20px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    width:200px;
+    margin:5px auto;
+    border:1px solid #fff4e1;
+    border-left:3px solid #05c6a4;
+    box-shadow: 1px 1px 15px #ececec;
+    cursor: pointer;
+    &:hover{
+      background: #05c6a4;
+      color: #fff;
+    }
+  }
+}
+.rss-title{
+  background: #05c6a4;
+  font-size: 24px;
+  text-align: center;
+  height:44px;
+  line-height:44px;
+  color:#fff;
+  margin:2px 3px;
+}
+.rss-article-list{
+  max-width: 600px;
+  margin:0 auto;
+  max-height: 100%;
+  height: 100%;
+  overflow-y:auto;
+}
+.rss-article-list .rss-article{
   margin:5px 3px;
   background: #fff;
   border:1px solid transparent;
@@ -13,6 +57,7 @@ body,html{
   padding:10px 10px;
   height:66px;
   position: relative;
+
     h4{
       font-size:16px;
       color:#333;
@@ -24,6 +69,13 @@ body,html{
       white-space: nowrap;
       text-overflow:ellipsis;
     }
+  em{
+    color:#999;
+    font-size:12px;
+    position: absolute;
+    right:10px;
+    top:10px;
+  }
   label{
     color:#05c6a4;
     font-size: 14px;
@@ -48,7 +100,7 @@ body,html{
   .loading{
     width: 150px;
     height: 15px;
-    margin: 20px auto;
+    margin: 25px auto;
     position: relative;
   }
   .loading span{
