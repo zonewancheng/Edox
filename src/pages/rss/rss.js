@@ -14,15 +14,23 @@
         data: function () {
             return {
                 siteList: [
-
                     {
-                        name: "SegmentFault",
-                        feedUrl: "https://segmentfault.com/articles/feeds",
+                        name: "互联网",
+                        feedUrl: "http://www.yixieshi.com/feed",
+                        articleList: []
+                    },
+                    {
+                        name: "前端早读课",
+                        feedUrl: "http://caibaojian.com/feed",
                         articleList: []
                     },
                     {
                         name: "知乎",
                         feedUrl: "https://www.zhihu.com/rss",
+                        articleList: []
+                    },{
+                        name: "科技",
+                        feedUrl: "http://www.alibuybuy.com/feed",
                         articleList: []
                     },
                     {
@@ -34,7 +42,13 @@
                         name: "w3cways",
                         feedUrl: "https://www.w3cways.com/feed",
                         articleList: []
+                    },
+                    {
+                        name: "SegmentFault",
+                        feedUrl: "https://segmentfault.com/articles/feeds",
+                        articleList: []
                     }
+
                 ]
             }
         },
