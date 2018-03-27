@@ -74,19 +74,26 @@
                 parser.parseURL(CORS_PROXY + link, function (err, feed) {
 
                     try {
-                        feed.items.forEach(function (entry) {
+                        feed.items&&feed.items.forEach(function (entry) {
                             var item = JSON.parse(JSON.stringify(artile));
                             item.title = entry.title;
                             item.link = entry.link;
                             item.mark = entry.categories;
 
+
                             if (link.indexOf("zhihu") != -1) {
                                 item.author = entry.creator && entry.creator._;
+                            }else if(link.indexOf("segmentfault")!=-1){
+                                item.author = entry.author;
                             } else {
                                 item.author = entry.creator;
                             }
                             try {
-                                item.date = entry.isoDate.split("T").join(" ").split(".000Z").join("")
+                                if(link.indexOf("segmentfault")!=-1){
+                                    item.date = entry.pubDate.split("T").join(" ").split(".000Z").join("")
+                                }else{
+                                    item.date = entry.isoDate.split("T").join(" ").split(".000Z").join("")
+                                }
                             } catch (e) {
                                 item.date = entry.isoDate;
                             }
@@ -96,7 +103,7 @@
                         _this.siteList[index].articleList = arry;
                         _this.siteList[index].show = true;
                     } catch (r) {
-                        feed.items.forEach(function (entry) {
+                        feed.items&&feed.items.forEach(function (entry) {
                             var item = JSON.parse(JSON.stringify(artile));
                             item.title = entry.title;
                             item.link = entry.link;
