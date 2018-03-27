@@ -1,4 +1,3 @@
-
 (function () {
     var artile = {
         title: '',
@@ -6,35 +5,35 @@
         link: '',
         image: '',
         copyright: '',
-        mark:[],
-        author:"",
-        date:""
+        mark: [],
+        author: "",
+        date: ""
     };
     var RSS = new Vue({
         el: "#mainPage",
         data: function () {
             return {
-                siteList:[
+                siteList: [
 
                     {
-                        name:"SegmentFault",
-                        feedUrl:"https://segmentfault.com/articles/feeds",
-                        articleList:[]
+                        name: "SegmentFault",
+                        feedUrl: "https://segmentfault.com/articles/feeds",
+                        articleList: []
                     },
                     {
-                        name:"知乎",
-                        feedUrl:"https://www.zhihu.com/rss",
-                        articleList:[]
+                        name: "知乎",
+                        feedUrl: "https://www.zhihu.com/rss",
+                        articleList: []
                     },
                     {
-                        name:"掘金",
-                        feedUrl:"https://juejin.im/rss",
-                        articleList:[]
+                        name: "掘金",
+                        feedUrl: "https://juejin.im/rss",
+                        articleList: []
                     },
                     {
-                        name:"w3cways",
-                        feedUrl:"https://www.w3cways.com/feed",
-                        articleList:[]
+                        name: "w3cways",
+                        feedUrl: "https://www.w3cways.com/feed",
+                        articleList: []
                     }
                 ]
             }
@@ -45,67 +44,66 @@
             },
             getRssFeed: function () {
 
-            for(var i=0,lg=this.siteList.length;i<lg;i++){
-                var link = this.siteList[i].feedUrl;
-                this.parseRss(link,i)
-            }
+                for (var i = 0, lg = this.siteList.length; i < lg; i++) {
+                    var link = this.siteList[i].feedUrl;
+                    this.parseRss(link, i)
+                }
 
             },
-            parseRss: function (link,index) {
+            parseRss: function (link, index) {
 
                 var CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
-                var _this =  this;
+                var _this = this;
                 var arry = [];
                 var parser = new RSSParser();
 
                 parser.parseURL(CORS_PROXY + link, function (err, feed) {
 
-                    try{
+                    try {
                         feed.items.forEach(function (entry) {
-                            var item  = JSON.parse(JSON.stringify(artile));
+                            var item = JSON.parse(JSON.stringify(artile));
                             item.title = entry.title;
                             item.link = entry.link;
                             item.mark = entry.categories;
 
-                            if(link.indexOf("zhihu")!=-1){
-                                item.author = entry.creator&&entry.creator._;
-                            }else{
+                            if (link.indexOf("zhihu") != -1) {
+                                item.author = entry.creator && entry.creator._;
+                            } else {
                                 item.author = entry.creator;
                             }
                             try {
                                 item.date = entry.isoDate.split("T").join(" ").split(".000Z").join("")
-                            }catch(e){
+                            } catch (e) {
                                 item.date = entry.isoDate;
                             }
                             arry.push(item);
                         });
 
                         _this.siteList[index].articleList = arry;
-                        _this.siteList[index].show =  true;
-                    }catch (r){
+                        _this.siteList[index].show = true;
+                    } catch (r) {
                         feed.items.forEach(function (entry) {
-                            var item  = JSON.parse(JSON.stringify(artile));
+                            var item = JSON.parse(JSON.stringify(artile));
                             item.title = entry.title;
                             item.link = entry.link;
                             item.mark = entry.categories;
 
-                            if(link.indexOf("zhihu")!=-1){
-                                item.author = entry.creator&&entry.creator._;
-                            }else{
+                            if (link.indexOf("zhihu") != -1) {
+                                item.author = entry.creator && entry.creator._;
+                            } else {
                                 item.author = entry.creator;
                             }
                             try {
                                 item.date = entry.isoDate.split("T").join(" ").split(".000Z").join("")
-                            }catch(e){
+                            } catch (e) {
                                 item.date = entry.isoDate;
                             }
                             arry.push(item);
                         });
 
                         _this.siteList[index].articleList = arry;
-                        _this.siteList[index].show =  true;
+                        _this.siteList[index].show = true;
                     }
-
 
 
                 })

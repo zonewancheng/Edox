@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div  class="rss-article" v-for="item in key.articleList">
+                <div class="rss-article" v-for="item in key.articleList">
                     <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
                     <em v-html="item.date"></em>
                     <label v-html="item.author"></label>

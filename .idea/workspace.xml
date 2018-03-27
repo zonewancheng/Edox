@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c95b52f-a620-4072-8ae7-7396d875aafe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/pages/rss/rss.js" afterPath="$PROJECT_DIR$/src/pages/rss/rss.js" />
       <change beforePath="$PROJECT_DIR$/src/pages/rss/rss.less" afterPath="$PROJECT_DIR$/src/pages/rss/rss.less" />
       <change beforePath="$PROJECT_DIR$/src/pages/rss/tpl.rss.html" afterPath="$PROJECT_DIR$/src/pages/rss/tpl.rss.html" />
@@ -22,7 +21,7 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8360">
+            <state relative-caret-position="3008">
               <caret line="445" column="18" lean-forward="false" selection-start-line="445" selection-start-column="18" selection-end-line="445" selection-end-column="18" />
               <folding />
             </state>
@@ -72,31 +71,31 @@
       <file leaf-file-name="rss.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/rss/rss.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
+            <state relative-caret-position="-2123">
               <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rss.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rss.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/rss/rss.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="105" column="59" lean-forward="false" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
+            <state relative-caret-position="281">
+              <caret line="61" column="19" lean-forward="false" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
               <folding>
-                <element signature="e#1831#2672#0" expanded="false" />
-                <element signature="e#2894#3735#0" expanded="false" />
+                <element signature="e#1875#2726#0" expanded="false" />
+                <element signature="e#2949#3800#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.rss.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tpl.rss.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/rss/tpl.rss.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="304">
+              <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -207,9 +206,9 @@
         <option value="$PROJECT_DIR$/build/map.js" />
         <option value="$PROJECT_DIR$/build/gulpfile.js" />
         <option value="$PROJECT_DIR$/src/js/router.js" />
-        <option value="$PROJECT_DIR$/src/pages/rss/tpl.rss.html" />
         <option value="$PROJECT_DIR$/src/pages/rss/rss.less" />
         <option value="$PROJECT_DIR$/src/pages/rss/rss.js" />
+        <option value="$PROJECT_DIR$/src/pages/rss/tpl.rss.html" />
       </list>
     </option>
   </component>
@@ -428,12 +427,12 @@
       <workItem from="1521163683491" duration="700000" />
       <workItem from="1521194633889" duration="881000" />
       <workItem from="1522051594730" duration="7763000" />
-      <workItem from="1522116948523" duration="8382000" />
+      <workItem from="1522116948523" duration="9171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127131000" />
+    <option name="totallyTimeSpent" value="127920000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -778,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8360">
-          <caret line="445" column="18" lean-forward="false" selection-start-line="445" selection-start-column="18" selection-end-line="445" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -818,17 +809,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/rss/tpl.rss.html">
+    <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="3008">
+          <caret line="445" column="18" lean-forward="false" selection-start-line="445" selection-start-column="18" selection-end-line="445" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rss/rss.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="-2123">
           <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
           <folding />
         </state>
@@ -836,12 +827,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rss/rss.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="105" column="59" lean-forward="false" selection-start-line="105" selection-start-column="59" selection-end-line="105" selection-end-column="59" />
+        <state relative-caret-position="281">
+          <caret line="61" column="19" lean-forward="false" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
           <folding>
-            <element signature="e#1831#2672#0" expanded="false" />
-            <element signature="e#2894#3735#0" expanded="false" />
+            <element signature="e#1875#2726#0" expanded="false" />
+            <element signature="e#2949#3800#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/rss/tpl.rss.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="37" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
