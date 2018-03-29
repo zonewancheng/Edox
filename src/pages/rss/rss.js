@@ -20,8 +20,23 @@
                         articleList: []
                     },
                     {
+                        name: "36氪",
+                        feedUrl: "http://36kr.com/feed",
+                        articleList: []
+                    },
+                    {
                         name: "前端早读课",
                         feedUrl: "http://caibaojian.com/feed",
+                        articleList: []
+                    },
+                    {
+                        name: "大搜车",
+                        feedUrl: "http://f2e.souche.com/blog/rss/",
+                        articleList: []
+                    },
+                    {
+                        name: "梦想天空-博客园",
+                        feedUrl: "http://feed.cnblogs.com/blog/u/40553/rss",
                         articleList: []
                     },
                     {
@@ -39,15 +54,30 @@
                         articleList: []
                     },
                     {
+                        name: "知道创宇",
+                        feedUrl: "http://blog.knownsec.com/feed/",
+                        articleList: []
+                    },
+                    {
                         name: "w3cways",
                         feedUrl: "https://www.w3cways.com/feed",
+                        articleList: []
+                    },
+                    {
+                        name: "w3cplus",
+                        feedUrl: "https://www.w3cplus.com/rss.xml",
                         articleList: []
                     },
                     {
                         name: "SegmentFault",
                         feedUrl: "https://segmentfault.com/articles/feeds",
                         articleList: []
-                    }
+                    },
+                    // {
+                    //     name: "Feed",
+                    //     feedUrl: "http://paulirish.github.io/frontend-feeds/frontend-feeds.opml",
+                    //     articleList: []
+                    // },
 
                 ]
             }

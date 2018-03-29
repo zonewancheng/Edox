@@ -48,6 +48,8 @@ var clean = require('gulp-clean');
 var replace = require('gulp-replace');
 var through = require('through2');
 var version = new Date().getTime();
+var proxy = require('http-proxy-middleware');
+
 
 //获取文件夹下所有的文件名字并返回一个数组
 var readFileNameList = function (path) {
@@ -440,10 +442,26 @@ gulp.task('reload', function () {
 })
 
 // 静态服务器 + 监听 less/html/js/images/Edox框架源文件
+var proxy_middleware = proxy({
+    target: 'http://localhost',
+    changeOrigin: true,
+    pathRewrite: {
+        'http://localhost' : 'http://dev.xicer.com'
+    },
+    router: {
+        // when request.headers.host == 'dev.localhost:3000',
+        // override target 'http://www.example.org' to 'http://localhost:8000'
+        'http://localhost:3000' : 'http://dev.xicer.com'
+    }
+});
+
 gulp.task('server', function () {
     browserSync.init({
         server: buildPath,
-        index:"rss.html"
+        index:"rss.html",
+        //https:true,
+        //middleware:[proxy_middleware]
+
     });
     gulp.watch(developPath + "**/*").on('change', function () {
         runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");
