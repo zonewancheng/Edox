@@ -104,7 +104,7 @@
                 parser.parseURL(CORS_PROXY + link, function (err, feed) {
 
                     try {
-                        feed.items&&feed.items.forEach(function (entry) {
+                        feed&&feed.items&&feed.items.forEach(function (entry) {
                             var item = JSON.parse(JSON.stringify(artile));
                             item.title = entry.title;
                             item.link = entry.link;
@@ -133,7 +133,7 @@
                         _this.siteList[index].articleList = arry;
                         _this.siteList[index].show = true;
                     } catch (r) {
-                        feed.items&&feed.items.forEach(function (entry) {
+                        feed&&feed.items&&feed.items.forEach(function (entry) {
                             var item = JSON.parse(JSON.stringify(artile));
                             item.title = entry.title;
                             item.link = entry.link;
