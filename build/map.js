@@ -38,7 +38,8 @@ var headerReplace = [
         '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/rss-parser.js?v='+version+'"></script>'
+        '<script  type="text/javascript" src="js/rss-parser.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/axios.js?v='+version+'"></script>'
 
     ]
     bodyReplace = [
