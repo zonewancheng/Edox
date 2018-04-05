@@ -1,54 +1,35 @@
-<section id="mainPage">
-    <section class="user-info flex-box">
-        <div class="flex1 user-avatar">
-            <em></em>
-        </div>
-        <div class="flex4">
-            <dd><h4>我的世界</h4><span>核心</span></dd>
-            <dd>编号：320547199145871683</dd>
-        </div>
+<div id='mainPage'>
+    <section class="rss-menu">
+        <template>
+            <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
+                {{item.name}}
+            </a>
+        </template>
+    </section>
+    <section class="rss-article-list">
+        <template>
+            <div v-for="key in siteList">
+                <div :id="key.name" class="rss-title" v-html="key.name"></div>
+                <div v-if="!key.show" class="rss-article">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
 
-    </section>
-    <section class="other-12306-user-list">
-        <div class="flex-box" style="border:none">
-            <div class="flex1 edit-user">
-                <em></em>
-            </div>
-            <div class="flex4" >
-                <h4>世界一</h4>
-                <p>编号：412823100199911344</p>
-                <label>2018.02.05生效</label>
-            </div>
-        </div>
-        <div class="flex-box">
-            <div class="flex1 edit-user">
-                <em></em>
-            </div>
-            <div class="flex4">
-                <h4>世界二</h4>
-                <p>编号：412823100199911344</p>
-                <label>2018.02.05生效</label>
-            </div>
-        </div>
-        <div class="flex-box">
-            <div class="flex1 edit-user">
-                <em></em>
-            </div>
-            <div class="flex4">
-                <h4>世界三</h4>
-                <p>编号：412823100199911344</p>
-                <label class="unActive">待核验</label>
-            </div>
-        </div>
-    </section>
-    <section class="help-info">
-        <h4>什么是另类的使用Vue？</h4>
-        <p>1. 页面自动刷新</p>
-        <p>2. component自动生效，无需手动引入组件</p>
-    </section>
+                <div class="rss-article" v-for="item in key.articleList">
+                    <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
+                    <em v-html="item.date"></em>
+                    <label v-html="item.author"></label>
+                    <div class="mark">
+                        <span v-for=" mk in item.mark">{{mk}}</span>
+                    </div>
+                </div>
 
-    <section class="fixed-bar flex-box">
-        <div class="by-yourself flex1" v-on:click="addBySelf">手动打开</div>
-        <div class="by-12306 flex1" v-on:click="addBy12306">新世界大门</div>
+            </div>
+        </template>
     </section>
-</section>
+</div>

@@ -51,7 +51,7 @@ var headerReplace = [
 var pageList = { //页面列表
     "app":"单页应用主页",
     //模块A
-    "index": "Edox 首页",
+    "index": "zone'rss reader",
     //模块B
     "login": "登录",
     //模块C

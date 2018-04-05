@@ -23,7 +23,7 @@
             getRssFeed: function () {
 
                 var _this = this;
-                var url = "https://oospace.com/rss.json";
+                var url = "https://raw.githubusercontent.com/OoSpace/database/master/rss.json";
 
 
                 axios({

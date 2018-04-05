@@ -166,7 +166,7 @@ gulp.task('js', function () {
         // .pipe(babel({
         //     presets: [es2015]
         // }))
-        .pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
+        //.pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
         //.pipe(jshint.reporter("default"))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify({mangle: false}))
