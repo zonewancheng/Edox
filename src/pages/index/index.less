@@ -1,55 +1,91 @@
 ody, html {
   background: #f9f9f9;
-  max-width: 1080px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 5px 0;
   position: relative;
-  overflow-y: hidden;
+  overflow-x: hidden;
   user-select: none;
 }
-
+.rss-name-title{
+  font-size:14px;
+  color:#fff;
+  background: #ff6540;
+  height:34px;
+  width:100%;
+  display: block;
+  line-height: 34px;
+  text-align: center;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 99;
+}
 .rss-menu {
-  position: absolute;
-  left: 0px;
-  top: 5px;
+  position: fixed;
+  left: 50%;
+  top: 40px;
+  margin-left:-430px;
   background: #fff;
   .rss-menu-item {
     background: #fff;
     display: block;
     color: #666;
-    font-size: 20px;
-    height: 40px;
-    line-height: 40px;
+    font-size: 12px;
+    height: 34px;
+    line-height: 34px;
     text-align: center;
-    width: 200px;
-    margin: 5px auto;
-    border: 1px solid #fff4e1;
-    border-left: 3px solid #05c6a4;
-    box-shadow: 1px 1px 15px #ececec;
+    width: 120px;
+    margin: 2px auto 0 auto;
+    border: 1px solid #ececec;
+    border-left: 3px solid #02a1f0;
+    //box-shadow: 1px 1px 15px #ececec;
     cursor: pointer;
     &:hover {
-      background: #05c6a4;
+      background: #02a1f0;
       color: #fff;
     }
   }
 }
-
 .rss-title {
   background: #05c6a4;
-  font-size: 24px;
+  font-size: 12px;
   text-align: center;
-  height: 44px;
-  line-height: 44px;
+  height: 34px;
+  line-height: 34px;
   color: #fff;
   margin: 2px 3px;
+  position: relative;
 }
-
+.rss-title::after{
+  content:"";
+  width:6px;
+  height:6px;
+  display: block;
+  position: absolute;
+  border-top:1px solid #fff;
+  border-right:1px solid #fff;
+  transform: rotateZ(135deg);
+  right:10px;
+  top:13px;
+}
+.rss-title-hide::after{
+  content:"";
+  width:6px;
+  height:6px;
+  display: block;
+  position: absolute;
+  border-top:1px solid #fff;
+  border-right:1px solid #fff;
+  transform: rotateZ(-45deg);
+  right:10px;
+  top:13px;
+}
 .rss-article-list {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 38px auto  0 auto;
   max-height: 100%;
   height: 100%;
-  overflow-y: auto;
 }
 
 .rss-article-list .rss-article {
@@ -103,7 +139,7 @@ ody, html {
       border-radius: 3px;
       margin: 3px;
       float: right;
-      color: #888;
+      color: #ff6540;
       font-size: 12px;
     }
   }
@@ -147,4 +183,16 @@ ody, html {
     -webkit-animation-delay: 0.65s;
   }
 
+}
+@media screen and (max-width:880px){
+  .rss-menu{
+    display: none;
+  }
+  .rss-article-list .rss-article h4{
+    max-width:220px;
+    font-size:14px;
+  }
+  .rss-article-list .rss-article .mark{
+    max-width:200px;
+  }
 }

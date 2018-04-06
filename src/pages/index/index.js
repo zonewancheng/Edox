@@ -17,6 +17,10 @@
             }
         },
         methods: {
+            toggle: function (key) {
+                key.hide = !key.hide;
+                console.log(key.name +" : "+key.hide)
+            },
             initPage: function () {
                 this.getRssFeed();
             },
@@ -34,8 +38,6 @@
                 }).then(function (resp) {
                     if (resp) {
                         var data = resp.data;
-                        console.log(data)
-                        console.log(JSON.parse(decodeURIComponent(data)))
                         var siteList = data && JSON.parse(decodeURIComponent(data)).siteList || [];
                         _this.siteList = siteList;
                     }

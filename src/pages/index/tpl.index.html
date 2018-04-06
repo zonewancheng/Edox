@@ -1,4 +1,7 @@
 <div id='mainPage'>
+    <section class="rss-name-title">
+        免费、开源、极简、RSS阅读
+    </section>
     <section class="rss-menu">
         <template>
             <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
@@ -9,7 +12,8 @@
     <section class="rss-article-list">
         <template>
             <div v-for="key in siteList">
-                <div :id="key.name" class="rss-title" v-html="key.name"></div>
+                <div :id="key.name" :class="key.hide?'rss-title rss-title-hide':'rss-title'" v-on:click="toggle(key)" v-html="key.name"></div>
+                <template v-if="!key.hide">
                 <div v-if="!key.show" class="rss-article">
                     <div class="loading">
                         <span></span>
@@ -19,8 +23,7 @@
                         <span></span>
                     </div>
                 </div>
-
-                <div class="rss-article" v-for="item in key.articleList">
+                <div  class="rss-article" v-for="item in key.articleList">
                     <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
                     <em v-html="item.date"></em>
                     <label v-html="item.author"></label>
@@ -28,7 +31,7 @@
                         <span v-for=" mk in item.mark">{{mk}}</span>
                     </div>
                 </div>
-
+                </template>
             </div>
         </template>
     </section>

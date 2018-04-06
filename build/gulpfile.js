@@ -80,12 +80,12 @@ gulp.task('pkg', function () {
 // 编译less,并压缩css输出到目标目录
 gulp.task('css', function () {
     return gulp.src(developPath + "css/**")
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
         .pipe(less())
         .pipe(minifycss())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest(buildPath + "css/"))
 })
 
@@ -115,12 +115,12 @@ gulp.task('pages-css-dev', function () {
 // 编译less,并压缩css输出到目标目录
 gulp.task('pages-css', function () {
     return gulp.src(developPath + "pages/**/*.less")
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
         .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
         .pipe(less())
         .pipe(minifycss())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
             var css_filename = name.split(".")[0];
@@ -162,7 +162,7 @@ gulp.task('static-dev', function () {
 // 编译ES6到ES5,并压缩js 输出到目标目录
 gulp.task('js', function () {
     return gulp.src((developPath + 'js/**'))
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         // .pipe(babel({
         //     presets: [es2015]
         // }))
@@ -170,7 +170,7 @@ gulp.task('js', function () {
         //.pipe(jshint.reporter("default"))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify({mangle: false}))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .on('error', function (e) {
             console.log(e);
         })
@@ -203,7 +203,7 @@ gulp.task('pages-js-dev', function () {
 });
 gulp.task('pages-js', function () {
     return gulp.src((developPath + 'pages/**/*.js'))
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(babel({
             presets: [es2015]
         }))
@@ -211,7 +211,7 @@ gulp.task('pages-js', function () {
         //.pipe(jshint.reporter("default"))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify({mangle: false}))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .on('error', function (e) {
             console.log(e);
         })
@@ -458,7 +458,7 @@ var proxy_middleware = proxy({
 gulp.task('server', function () {
     browserSync.init({
         server: buildPath,
-        index:"rss.html",
+        index:"index.html",
         //https:true,
         //middleware:[proxy_middleware]
 

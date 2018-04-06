@@ -49,20 +49,8 @@ var headerReplace = [
 
 //需要创建的文件及对应标题列表
 var pageList = { //页面列表
-    "app":"单页应用主页",
     //模块A
-    "index": "zone'rss reader",
-    //模块B
-    "login": "登录",
-    //模块C
-    "register": "注册",
-    //模块D
-    "logout":"退出",
-    "import":"导入",
-    "passenger":"添加Vue",
-    "home":"主页",
-    "newPage":"新页面",
-    "rss":"zone'rss reader"
+    "index": "Reader"
 
 };
 var basePath = "../src/";//生成文件放置的路径
