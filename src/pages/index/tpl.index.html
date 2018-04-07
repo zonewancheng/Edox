@@ -33,7 +33,7 @@
                 </div>
             </div>
         </template>
-        <template v-if="articlelist&&!hide">
+        <template v-if="articlelist.length==0&&!hide">
             <div class="rss-article">
                 <div class="loading">
                     <span></span>
