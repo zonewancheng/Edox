@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c95b52f-a620-4072-8ae7-7396d875aafe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/build/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/tpl.index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index/tpl.index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imgs/favicon_128.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imgs/favicon_32.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imgs/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imgs/icon_128.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imgs/icon_32.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/imgs/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,6 +31,15 @@
               <folding>
                 <marker date="1522987097691" expanded="true" signature="15112:15163" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -57,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tpl.index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/index/tpl.index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+            <state relative-caret-position="168">
+              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -195,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/pages/index/index.js" />
         <option value="$PROJECT_DIR$/build/map.js" />
         <option value="$PROJECT_DIR$/src/pages/index/tpl.index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -284,19 +299,7 @@
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="imgs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
@@ -435,25 +438,25 @@
       <workItem from="1522286716851" duration="4241000" />
       <workItem from="1522718894585" duration="2790000" />
       <workItem from="1522805236462" duration="11172000" />
-      <workItem from="1522977282059" duration="14363000" />
+      <workItem from="1522977282059" duration="14750000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167340000" />
+    <option name="totallyTimeSpent" value="167727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21775898" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21775898" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32889965" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29818183" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29818183" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -496,13 +499,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1007">
-          <caret line="53" column="14" selection-start-line="53" selection-start-column="14" selection-end-line="53" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/rss/rss.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1748">
@@ -742,16 +738,6 @@
     <entry file="file://$PROJECT_DIR$/src/imgs/logo.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1463">
-          <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
-          <folding>
-            <marker date="1522987097691" expanded="true" signature="15112:15163" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -799,8 +785,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index/tpl.index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+        <state relative-caret-position="168">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1463">
+          <caret line="82" column="10" selection-start-line="82" selection-start-column="10" selection-end-line="82" selection-end-column="10" />
+          <folding>
+            <marker date="1522987097691" expanded="true" signature="15112:15163" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
