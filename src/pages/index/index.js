@@ -9,6 +9,22 @@
         author: "",
         date: ""
     };
+
+    Vue.component('article-list-comp',{
+        template:"#rss-articleList",
+        props:['articlelist','name'],
+        data:function () {
+            return{
+                hide:false
+            }
+        },
+        methods:{
+            toggle: function (key) {
+                this.hide = !this.hide;
+                console.log(this.name +" : hide : "+key.hide)
+            },
+        }
+    })
     var RSS = new Vue({
         el: "#mainPage",
         data: function () {
@@ -17,10 +33,7 @@
             }
         },
         methods: {
-            toggle: function (key) {
-                key.hide = !key.hide;
-                console.log(key.name +" : "+key.hide)
-            },
+
             initPage: function () {
                 this.getRssFeed();
             },
@@ -114,7 +127,6 @@
                         });
 
                         _this.siteList[index].articleList = arry;
-                        _this.siteList[index].show = true;
                     }
 
 

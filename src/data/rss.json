@@ -57,6 +57,10 @@
     "name": "SegmentFault",
     "feedUrl": "https://segmentfault.com/articles/feeds",
     "articleList": []
+  },{
+    "name": "HKL",
+    "feedUrl": "http://www.y-hkl.top/atom.xml",
+    "articleList": []
   }
   // {
   //     name: "Feed",

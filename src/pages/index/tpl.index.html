@@ -1,6 +1,6 @@
 <div id='mainPage'>
     <section class="rss-name-title">
-        免费、开源、极简、RSS阅读
+        奔跑，直到自己成为风
     </section>
     <section class="rss-menu">
         <template>
@@ -12,27 +12,37 @@
     <section class="rss-article-list">
         <template>
             <div v-for="key in siteList">
-                <div :id="key.name" :class="key.hide?'rss-title rss-title-hide':'rss-title'" v-on:click="toggle(key)" v-html="key.name"></div>
-                <template v-if="!key.hide">
-                <div v-if="!key.show" class="rss-article">
-                    <div class="loading">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div  class="rss-article" v-for="item in key.articleList">
-                    <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
-                    <em v-html="item.date"></em>
-                    <label v-html="item.author"></label>
-                    <div class="mark">
-                        <span v-for=" mk in item.mark">{{mk}}</span>
-                    </div>
-                </div>
-                </template>
+                <article-list-comp :articlelist="key.articleList" :name="key.name"></article-list-comp>
             </div>
         </template>
     </section>
 </div>
+
+<script type="text/template" id="rss-articleList">
+    <section>
+        <div :id="name" :class="hide?'rss-title rss-title-hide':'rss-title'"
+             v-on:click="toggle"
+             v-html="name"></div>
+        <template v-if="!hide">
+            <div class="rss-article" v-for="item in articlelist">
+                <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
+                <em v-html="item.date"></em>
+                <label v-html="item.author"></label>
+                <div class="mark">
+                    <span v-for=" mk in item.mark">{{mk}}</span>
+                </div>
+            </div>
+        </template>
+        <template v-if="articlelist&&!hide">
+            <div class="rss-article">
+                <div class="loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </template>
+    </section>
+</script>
