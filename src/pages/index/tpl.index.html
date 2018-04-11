@@ -1,48 +1,4 @@
 <div id='mainPage'>
-    <section class="rss-name-title">
-        奔跑，直到自己成为风
-    </section>
-    <section class="rss-menu">
-        <template>
-            <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
-                {{item.name}}
-            </a>
-        </template>
-    </section>
-    <section class="rss-article-list">
-        <template>
-            <div v-for="key in siteList">
-                <article-list-comp :articlelist="key.articleList" :name="key.name"></article-list-comp>
-            </div>
-        </template>
-    </section>
+
 </div>
 
-<script type="text/template" id="rss-articleList">
-    <section>
-        <div :id="name" :class="hide?'rss-title rss-title-hide':'rss-title'"
-             v-on:click="toggle"
-             v-html="name"></div>
-        <template v-if="!hide">
-            <div class="rss-article" v-for="item in articlelist">
-                <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
-                <em v-html="item.date"></em>
-                <label v-html="item.author"></label>
-                <div class="mark">
-                    <span v-for=" mk in item.mark">{{mk}}</span>
-                </div>
-            </div>
-        </template>
-        <template v-if="articlelist.length==0&&!hide">
-            <div class="rss-article">
-                <div class="loading">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </template>
-    </section>
-</script>

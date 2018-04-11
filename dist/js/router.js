@@ -1,0 +1,1 @@
+var Foo={template:"<div>foo</div>"},Bar={template:"<div>bar</div>"},router=new VueRouter({routes:[{path:"/foo",component:Foo},{path:"/bar",component:Bar}]});

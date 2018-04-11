@@ -35,12 +35,9 @@ var headerReplace = [
         '<link rel="stylesheet" href="css/zui.css?v='+version+'" >',
     ],
     footerReplace = [
-        '<script  type="text/javascript" src="js/vue.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/rss-parser.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/axios.js?v='+version+'"></script>'
+        '<script  type="text/javascript" src="js/backbone.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/underscore.js?v='+version+'"></script>',
+        '<script  type="text/javascript" src="js/require.js?v='+version+'"></script>'
 
     ]
     bodyReplace = [
