@@ -1,3 +1,3 @@
-requirejs(['a','b'],function () {
+requirejs(['a','b','c'],function (model,view,collection) {
 
 })
