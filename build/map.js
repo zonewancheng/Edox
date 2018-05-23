@@ -36,9 +36,9 @@ var headerReplace = [
     ],
     footerReplace = [
         '<script  type="text/javascript" src="js/vue.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
-        '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>',
+        // '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
+        // '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
+        // '<script  type="text/javascript" src="js/component.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/rss-parser.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/axios.js?v='+version+'"></script>'
 
@@ -51,7 +51,8 @@ var headerReplace = [
 //需要创建的文件及对应标题列表
 var pageList = { //页面列表
     //模块A
-    "index": "Reader"
+    "index": "Reader",
+    "zone":"你猜，你猜，你猜猜猜；我写，我写，我写写写"
 
 };
 var basePath = "../src/";//生成文件放置的路径
