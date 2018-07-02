@@ -180,9 +180,9 @@ gulp.task('js', function () {
 
 gulp.task('js-dev', function () {
     return gulp.src((developPath + 'js/**'))
-        // .pipe(babel({
-        //     presets: [es2015]
-        // }))
+        .pipe(babel({
+            presets: [es2015]
+        }))
         .pipe(gulp.dest(buildPath + "js/"))
 });
 

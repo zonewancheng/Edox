@@ -1,10 +1,1 @@
-var Foo = { template: '<div>foo</div>' }
-var Bar = { template: '<div>bar</div>' }
-
-var router = new VueRouter({
-    routes:[
-        { path: '/foo', component: Foo },
-        { path: '/bar', component: Bar }
-    ]
-})
-
+const Foo={template:"<div>foo</div>"},Bar={template:"<div>bar</div>"},routes=[{path:"/foo",component:Foo},{path:"/bar",component:Bar}],router=new VueRouter({routes:routes}),app=new Vue({router:router}).$mount("#app");
