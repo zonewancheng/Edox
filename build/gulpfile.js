@@ -16,7 +16,7 @@ var stylish = require("jshint-stylish");
 //当发生异常时提示错误 确保本地安装gulp-notify和gulp-plumber
 var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
-var es2015 = require("babel-preset-es2015");
+var env = require("babel-preset-env");
 var minifycss = require('gulp-minify-css'); // 压缩css
 var rpath = require("path");
 var autoprefixer = require('gulp-autoprefixer'); // 处理浏览器私有前缀
@@ -162,12 +162,12 @@ gulp.task('static-dev', function () {
 // 编译ES6到ES5,并压缩js 输出到目标目录
 gulp.task('js', function () {
     return gulp.src((developPath + 'js/**'))
-        //.pipe(sourcemaps.init())
-        // .pipe(babel({
-        //     presets: [es2015]
-        // }))
-        //.pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
-        //.pipe(jshint.reporter("default"))
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: [env]
+        }))
+        .pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
+        .pipe(jshint.reporter("default"))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify({mangle: false}))
         //.pipe(sourcemaps.write())
@@ -181,7 +181,7 @@ gulp.task('js', function () {
 gulp.task('js-dev', function () {
     return gulp.src((developPath + 'js/**'))
         .pipe(babel({
-            presets: [es2015]
+            presets: [env]
         }))
         .pipe(gulp.dest(buildPath + "js/"))
 });
@@ -189,7 +189,7 @@ gulp.task('js-dev', function () {
 gulp.task('pages-js-dev', function () {
     return gulp.src((developPath + 'pages/**/*.js'))
         .pipe(babel({
-            presets: [es2015]
+            presets: [env]
         }))
         .pipe(through.obj(function (file, enc, cb) {
             var name = rpath.basename(file.path);
@@ -205,7 +205,7 @@ gulp.task('pages-js', function () {
     return gulp.src((developPath + 'pages/**/*.js'))
         //.pipe(sourcemaps.init())
         .pipe(babel({
-            presets: [es2015]
+            presets: [env]
         }))
         .pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
         //.pipe(jshint.reporter("default"))
@@ -369,7 +369,7 @@ gulp.task('images-dev', function () {
 gulp.task('Edox', function () {
     return gulp.src([developPath + 'Edox/**'])
         .pipe(babel({
-            presets: [es2015]
+            presets: [env]
         }))
         .pipe(jshint(".jshintrc"))
         //.pipe(jshint.reporter("default"))
@@ -386,7 +386,7 @@ gulp.task('Edox-dev', function () {
 gulp.task('js-dev', function () {
     return gulp.src((developPath + 'js/**'))
         // .pipe(babel({
-        //     presets: [es2015]
+        //     presets: [env]
         // }))
         .pipe(gulp.dest(buildPath + "js/"))
 });
@@ -409,7 +409,7 @@ gulp.task('images-dev', function () {
 gulp.task('Edox', function () {
     return gulp.src([developPath + 'Edox/*.js'])
         .pipe(babel({
-            presets: [es2015]
+            presets: [env]
         }))
         .pipe(jshint(".jshintrc"))
         //.pipe(jshint.reporter("default"))
@@ -422,7 +422,7 @@ gulp.task('Edox', function () {
 gulp.task('Edox-dev', function () {
     return gulp.src([developPath + 'Edox/*.js'])
         .pipe(babel({
-            presets: [es2015]
+            presets: [env]
         }))
         .pipe(gulp.dest(buildPath + "Edox/"))
 });
