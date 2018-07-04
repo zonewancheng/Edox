@@ -366,8 +366,8 @@ gulp.task('images-dev', function () {
 });
 
 // 框架依赖  输出到目标目录
-gulp.task('Edox', function () {
-    return gulp.src([developPath + 'Edox/**'])
+gulp.task('edox', function () {
+    return gulp.src([developPath + 'edox/**'])
         .pipe(babel({
             presets: [env]
         }))
@@ -375,12 +375,12 @@ gulp.task('Edox', function () {
         //.pipe(jshint.reporter("default"))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify({mangle: false}))
-        .pipe(gulp.dest(buildPath + "Edox/"))
+        .pipe(gulp.dest(buildPath + "edox/"))
 });
 
 // 框架依赖  输出到目标目录
-gulp.task('Edox-dev', function () {
-    return gulp.src([developPath + 'Edox/**'])
+gulp.task('edox-dev', function () {
+    return gulp.src([developPath + 'edox/**'])
 });
 
 gulp.task('js-dev', function () {
@@ -406,8 +406,8 @@ gulp.task('images-dev', function () {
 });
 
 // 框架依赖  输出到目标目录
-gulp.task('Edox', function () {
-    return gulp.src([developPath + 'Edox/*.js'])
+gulp.task('edox', function () {
+    return gulp.src([developPath + 'edox/*.js'])
         .pipe(babel({
             presets: [env]
         }))
@@ -415,16 +415,16 @@ gulp.task('Edox', function () {
         //.pipe(jshint.reporter("default"))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify({mangle: false}))
-        .pipe(gulp.dest(buildPath + "Edox/"))
+        .pipe(gulp.dest(buildPath + "edox/"))
 });
 
 // 框架依赖  输出到目标目录
-gulp.task('Edox-dev', function () {
-    return gulp.src([developPath + 'Edox/*.js'])
+gulp.task('edox-dev', function () {
+    return gulp.src([developPath + 'edox/*.js'])
         .pipe(babel({
             presets: [env]
         }))
-        .pipe(gulp.dest(buildPath + "Edox/"))
+        .pipe(gulp.dest(buildPath + "edox/"))
 });
 
 gulp.task('clean', function () {
@@ -441,7 +441,7 @@ gulp.task('reload', function () {
     //console.log("reload complete at " + new Date().toString());
 })
 
-// 静态服务器 + 监听 less/html/js/images/Edox框架源文件
+// 静态服务器 + 监听 less/html/js/images/edox框架源文件
 var proxy_middleware = proxy({
     target: 'http://localhost',
     changeOrigin: true,
