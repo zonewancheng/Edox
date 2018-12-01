@@ -1,45 +1,46 @@
 <div id="app">
-    <h1>Hello App!</h1>
+    <!--<h1>Hello App!</h1>
     <p>
-        <!-- 使用 router-link 组件来导航. -->
-        <!-- 通过传入 `to` 属性指定链接. -->
-        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        &lt;!&ndash; 使用 router-link 组件来导航. &ndash;&gt;
+        &lt;!&ndash; 通过传入 `to` 属性指定链接. &ndash;&gt;
+        &lt;!&ndash; <router-link> 默认会被渲染成一个 `<a>` 标签 &ndash;&gt;
         <router-link to="/foo">Go to Foo</router-link>
         <router-link to="/bar">Go to Bar</router-link>
     </p>
-    <!-- 路由出口 -->
-    <!-- 路由匹配到的组件将渲染在这里 -->
+    &lt;!&ndash; 路由出口 &ndash;&gt;
+    &lt;!&ndash; 路由匹配到的组件将渲染在这里 &ndash;&gt;
     <router-view></router-view>
-    <div id='mainPage'>
-        <section class="rss-name-title">
-            奔跑，直到自己成为风
-            <a href="/zone.html">zone</a>
-        </section>
-        <section class="rss-menu">
-            <template>
-                <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
-                    {{item.name}}
-                </a>
-            </template>
-        </section>
-        <section class="rss-article-list">
-            <template>
-                <div v-for="key in siteList">
-                    <article-list-comp :articlelist="key.articleList" :name="key.name"></article-list-comp>
-                </div>
-            </template>
-        </section>
-    </div>
+-->
 </div>
-
+<div id='mainPage'>
+    <section class="rss-name-title">
+        <template>
+            {{title}}
+            <!--<a href="/zone.html">zone</a>-->
+        </template>
+    </section>
+    <section class="rss-menu">
+        <template>
+            <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
+                {{item.name}}
+            </a>
+        </template>
+    </section>
+    <section class="rss-article-list">
+        <template>
+            <div v-for="key in siteList">
+                <article-list-comp :article-list="key.articleList" :name="key.name"></article-list-comp>
+            </div>
+        </template>
+    </section>
+</div>
 
 <script type="text/template" id="rss-articleList">
     <section>
         <div :id="name" :class="hide?'rss-title rss-title-hide':'rss-title'"
-             v-on:click="toggle"
-             v-html="name"></div>
+             v-on:click="toggle" v-html="name"></div>
         <template v-if="!hide">
-            <div class="rss-article" v-for="item in articlelist">
+            <div class="rss-article" v-for="item in articleList">
                 <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
                 <em v-html="item.date"></em>
                 <label v-html="item.author"></label>
@@ -48,7 +49,7 @@
                 </div>
             </div>
         </template>
-        <template v-if="articlelist.length==0&&!hide">
+        <template v-if="articleList.length==0&&!hide">
             <div class="rss-article">
                 <div class="loading">
                     <span></span>

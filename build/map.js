@@ -4,15 +4,15 @@
  * 需求模块 fs
  * 在需求目录下执行 node map.js
  */
-var fs = require("fs");
+let fs = require("fs");
 
-var head = "<!--_HEAD_CONTAINER_-->";
-var body = "<div id='eDox-container'><!--_BODY_CONTAINER_--></div>";
-var foot = "<!--_FOOT_CONTAINER_-->";
-var other = "<!--_OTHER_CONTAINER_-->";
-var version = new Date().getTime();
+let head = "<!--_HEAD_CONTAINER_-->";
+let body = "<div id='eDox-container'><!--_BODY_CONTAINER_--></div>";
+let foot = "<!--_FOOT_CONTAINER_-->";
+let other = "<!--_OTHER_CONTAINER_-->";
+let version = new Date().getTime();
 
-var headerReplace = [
+let headerReplace = [
         '<meta charset="UTF-8">',
         '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">',
         //'<meta content="yes" name="apple-mobile-web-app-capable" />',
@@ -49,17 +49,17 @@ var headerReplace = [
     ];
 
 //需要创建的文件及对应标题列表
-var pageList = { //页面列表
+let pageList = { //页面列表
     //模块A
     "index": "Reader",
     "zone":"你猜，你猜，你猜猜猜；我写，我写，我写写写"
 
 };
-var basePath = "../src/";//生成文件放置的路径
-var reCreate = true;//已有的文件是否重新创建，暂未打算支持， 可扩展
+let basePath = "../src/";//生成文件放置的路径
+let reCreate = true;//已有的文件是否重新创建，暂未打算支持， 可扩展
 
 //文件路径不统一覆盖
-for(var key in pageList){
+for(let key in pageList){
     if (fs.existsSync(basePath+"pages/"+key)) {
         console.log("已创建过"+basePath+ key+"目录");
     } else {
@@ -67,9 +67,9 @@ for(var key in pageList){
             console.log('目录'+basePath+"pages/"+key+'已创建成功\n');
 
             //生成模版文件
-            var js_template="";
-            var less_template="";
-            var tpl_html_template ="<div id='mainPage'></div>"
+            let js_template="";
+            let less_template="";
+            let tpl_html_template ="<div id='mainPage'></div>"
             fs.writeFile(basePath+"pages/"+key+"/"+key+".js", js_template, function (err) {
                 if (err) throw err;
             });
@@ -91,8 +91,8 @@ for(var key in pageList){
 //console.log(pageList);
 
 //模版文件统一重新覆盖
-for (var key in pageList) {
-    var template =
+for (let key in pageList) {
+    let template =
         "<html>\n" +
             "<head>\n" +
             "<title>" + pageList[key] + "</title>\n" +

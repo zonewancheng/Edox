@@ -1,5 +1,5 @@
 body, html {
-  background: #f9f9f9;
+  background: rgba(49, 58, 90,0.1);
   max-width: 100%;
   margin: 0 auto;
   padding: 5px 0;
@@ -10,15 +10,16 @@ body, html {
   -webkit-overflow-scrolling: touch;
 }
 .rss-name-title{
-  font-size:14px;
+  font-size:16px;
   color:#fff;
-  background: #ff6540;
-  height:34px;
+  background: #139dfb;
+  height:44px;
   width:100%;
   display: block;
-  line-height: 34px;
+  line-height: 44px;
   text-align: center;
   position: fixed;
+  font-weight: 500;
   top:0;
   left:0;
   z-index: 99;
@@ -26,37 +27,44 @@ body, html {
 .rss-menu {
   position: fixed;
   left: 50%;
-  top: 40px;
+  top: 50px;
   margin-left:-430px;
-  background: #fff;
+  background: transparent;
+  //border-left:5px solid #fbac57;
+  min-height: 640px;
   .rss-menu-item {
     background: #fff;
     display: block;
     color: #666;
-    font-size: 12px;
-    height: 34px;
-    line-height: 34px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     width: 120px;
-    margin: 2px auto 0 auto;
+    font-weight: 500;
+    margin: 4px auto 0 auto;
     border: 1px solid #ececec;
-    border-left: 3px solid #02a1f0;
+    border-left: 3px solid #fbac57;
+    border-bottom-right-radius: 40px;
     //box-shadow: 1px 1px 15px #ececec;
     cursor: pointer;
     &:hover {
-      background: #02a1f0;
+      background: rgba(2, 161, 240,1);
       color: #fff;
     }
   }
 }
 .rss-title {
-  background: #05c6a4;
-  font-size: 12px;
+  background: #fbac57;
+  font-size: 16px;
   text-align: center;
-  height: 34px;
-  line-height: 34px;
+  height: 40px;
+  line-height: 40px;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
   color: #fff;
   margin: 2px 3px;
+  font-weight: 500;
   position: relative;
 }
 .rss-title::after{
@@ -68,8 +76,8 @@ body, html {
   border-top:1px solid #fff;
   border-right:1px solid #fff;
   transform: rotateZ(135deg);
-  right:10px;
-  top:13px;
+  right:15px;
+  top:16px;
 }
 .rss-title-hide::after{
   content:"";
@@ -80,12 +88,12 @@ body, html {
   border-top:1px solid #fff;
   border-right:1px solid #fff;
   transform: rotateZ(-45deg);
-  right:10px;
-  top:13px;
+  right:15px;
+  top:16px;
 }
 .rss-article-list {
   max-width: 600px;
-  margin: 38px auto  0 auto;
+  margin: 44px auto  0 auto;
   max-height: 100%;
   height: 100%;
 }

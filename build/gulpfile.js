@@ -4,62 +4,62 @@
  * @Last Modified by:   zone
  * @Last Modified time: 2017-05-16 16:27:54
  */
-var gulp = require('gulp'); //  引入 gulp
-var less = require('gulp-less');
-var runSequence = require('run-sequence'); //让gulp任务，可以相互独立，解除任务间的依赖，增强task复用
-var browserSync = require('browser-sync').create(); // browser-sync 实时刷新
-var sourcemaps = require('gulp-sourcemaps'); // 源码压缩之后不易报错定位  sourcemaps用于错误查找
+let gulp = require('gulp'); //  引入 gulp
+let less = require('gulp-less');
+let runSequence = require('run-sequence'); //让gulp任务，可以相互独立，解除任务间的依赖，增强task复用
+let browserSync = require('browser-sync').create(); // browser-sync 实时刷新
+let sourcemaps = require('gulp-sourcemaps'); // 源码压缩之后不易报错定位  sourcemaps用于错误查找
 
-var jshint = require("gulp-jshint");//gulp jshint 插件主要用于检查代码，打印报告信息。
-var stylish = require("jshint-stylish");
+let jshint = require("gulp-jshint");//gulp jshint 插件主要用于检查代码，打印报告信息。
+let stylish = require("jshint-stylish");
 
 //当发生异常时提示错误 确保本地安装gulp-notify和gulp-plumber
-var notify = require('gulp-notify');
-var plumber = require('gulp-plumber');
-var env = require("babel-preset-env");
-var minifycss = require('gulp-minify-css'); // 压缩css
-var rpath = require("path");
-var autoprefixer = require('gulp-autoprefixer'); // 处理浏览器私有前缀
-var babel = require('gulp-babel'); // 编译ES6语法
-var $ = require('gulp-load-plugins')();
-var uglify = require('gulp-uglify'); // 压缩js
+let notify = require('gulp-notify');
+let plumber = require('gulp-plumber');
+let env = require("babel-preset-env");
+let minifycss = require('gulp-minify-css'); // 压缩css
+let rpath = require("path");
+//let autoprefixer = require('gulp-autoprefixer'); // 处理浏览器私有前缀
+let babel = require('gulp-babel'); // 编译ES6语法
+let $ = require('gulp-load-plugins')();
+let uglify = require('gulp-uglify'); // 压缩js
 
-var concat = require('gulp-concat');//合并js
-var htmlmin = require('gulp-htmlmin');
+let concat = require('gulp-concat');//合并js
+let htmlmin = require('gulp-htmlmin');
 
-var fs = require('fs');
-var del = require('del');
-var promise = require('promise');
-var imagemin = require('gulp-imagemin'); // 压缩图片
-var contentIncluder = require('gulp-content-includer'); //通过includer导入方式导入不同的模块
-var cache = require('gulp-cache'); //清除缓存
-var rev = require('gulp-rev-append'); //添加MD5
-var postcss = require('gulp-postcss'); //处理css
-var cssnext = require('cssnext'); //使用CSS未来的语法
-var precss = require('precss'); //编写Sass的函数
+let fs = require('fs');
+let del = require('del');
+let promise = require('promise');
+let imagemin = require('gulp-imagemin'); // 压缩图片
+let contentIncluder = require('gulp-content-includer'); //通过includer导入方式导入不同的模块
+let cache = require('gulp-cache'); //清除缓存
+let rev = require('gulp-rev-append'); //添加MD5
+let postcss = require('gulp-postcss'); //处理css
+let cssnext = require('cssnext'); //使用CSS未来的语法
+let precss = require('precss'); //编写Sass的函数
 
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
+//let postcss = require('gulp-postcss');
+let autoprefixer = require('autoprefixer');
 
-var developPath = "../src/";
-var buildPath = "../dist/";
-var clean = require('gulp-clean');
+let developPath = "../src/";
+let buildPath = "../dist/";
+let clean = require('gulp-clean');
 
-var replace = require('gulp-replace');
-var through = require('through2');
-var version = new Date().getTime();
-var proxy = require('http-proxy-middleware');
+let replace = require('gulp-replace');
+let through = require('through2');
+let version = new Date().getTime();
+let proxy = require('http-proxy-middleware');
 
 
 //获取文件夹下所有的文件名字并返回一个数组
-var readFileNameList = function (path) {
-    var result = [];
+let readFileNameList = function (path) {
+    let result = [];
 
     function finder(path) {
-        var files = fs.readdirSync(path);
+        let files = fs.readdirSync(path);
         files.forEach(function (val, index) {
-            var fPath = rpath.join(path, val);
-            var stats = fs.statSync(fPath);
+            let fPath = rpath.join(path, val);
+            let stats = fs.statSync(fPath);
             if (stats.isDirectory()) finder(fPath);
             if (stats.isFile()) result.push(fPath.toString().split("\\").join("/"));
         });
@@ -103,9 +103,9 @@ gulp.task('pages-css-dev', function () {
         .pipe(less())
         .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
-            var css_filename = name.split(".")[0];
-            var content = file.contents.toString();
+            let name = rpath.basename(file.path);
+            let css_filename = name.split(".")[0];
+            let content = file.contents.toString();
             fs.writeFile("../dist/css/"+css_filename+".css",content,function () {
 
             });
@@ -122,9 +122,9 @@ gulp.task('pages-css', function () {
         .pipe(minifycss())
         //.pipe(sourcemaps.write())
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
-            var css_filename = name.split(".")[0];
-            var content = file.contents.toString();
+            let name = rpath.basename(file.path);
+            let css_filename = name.split(".")[0];
+            let content = file.contents.toString();
             fs.writeFile("../dist/css/"+css_filename+".css",content,function () {
 
             });
@@ -192,9 +192,9 @@ gulp.task('pages-js-dev', function () {
             presets: [env]
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
-            var js_filename = name.split(".")[0];
-            var content = file.contents.toString();
+            let name = rpath.basename(file.path);
+            let js_filename = name.split(".")[0];
+            let content = file.contents.toString();
             fs.writeFile("../dist/js/"+js_filename+".js",content,function () {
 
             });
@@ -216,9 +216,9 @@ gulp.task('pages-js', function () {
             console.log(e);
         })
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
-            var js_filename = name.split(".")[0];
-            var content = file.contents.toString();
+            let name = rpath.basename(file.path);
+            let js_filename = name.split(".")[0];
+            let content = file.contents.toString();
             fs.writeFile("../dist/js/"+js_filename+".js",content,function () {
 
             });
@@ -227,7 +227,7 @@ gulp.task('pages-js', function () {
 });
 // 拷贝 html
 gulp.task('html', function () {
-    var options = {
+    let options = {
         removeComments: true,//清除HTML注释
         collapseWhitespace: true,//压缩HTML
         collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
@@ -239,26 +239,26 @@ gulp.task('html', function () {
     };
     return gulp.src([developPath + '*.html'])
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css?v='+version + "'>";
-            var content = file.contents.toString();
+            let content = file.contents.toString();
             content = content.replace('<!--_HEAD_CONTAINER_-->', name);
             file.contents = new Buffer(content);
             this.push(file);
             cb();
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             //console.log("path: "+name)
             name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
-            var that = this;
+            let that = this;
             //console.log(process.cwd())
             fs.readFile(name,"utf8",function (err,txt) {
                 if(err){
                     console.warn(name+" 不存在已跳过")
                 }else{
                     //console.log(txt)
-                    var content = file.contents.toString();
+                    let content = file.contents.toString();
                     content = content.replace('<!--_BODY_CONTAINER_-->', txt);
                     file.contents = new Buffer(content);
                     that.push(file);
@@ -267,18 +267,18 @@ gulp.task('html', function () {
             })
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js?v='+version + "'></script>";
-            var content = file.contents.toString();
+            let content = file.contents.toString();
             content = content.replace('<!--_FOOT_CONTAINER_-->', name);
             file.contents = new Buffer(content);
             this.push(file);
             cb();
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             name = "<script async defer src='" + 'js/points.js?v='+version + "'></script>";
-            var content = file.contents.toString();
+            let content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
             this.push(file);
@@ -297,26 +297,26 @@ function htmlReplace(str, name) {
 gulp.task('html-dev', function () {
     return gulp.src([developPath + '*.html'])
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             name = "<link rel='stylesheet' href='" + 'css/' + name.split(".")[0] + '.css?v='+version + "'>";
-            var content = file.contents.toString();
+            let content = file.contents.toString();
             content = content.replace('<!--_HEAD_CONTAINER_-->', name);
             file.contents = new Buffer(content);
             this.push(file);
             cb();
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             //console.log("path: "+name)
             name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
-            var that = this;
+            let that = this;
             //console.log(process.cwd())
             fs.readFile(name,"utf8",function (err,txt) {
                 if(err){
                     console.warn(name+".html"+" 不存在已跳过")
                 }else{
                     //console.log(txt)
-                    var content = file.contents.toString();
+                    let content = file.contents.toString();
                     content = content.replace('<!--_BODY_CONTAINER_-->', txt);
                     file.contents = new Buffer(content);
                     that.push(file);
@@ -326,18 +326,18 @@ gulp.task('html-dev', function () {
 
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             name = "<script async defer src='" + 'js/' + name.split(".")[0] + '.js?v='+version + "'></script>";
-            var content = file.contents.toString();
+            let content = file.contents.toString();
             content = content.replace('<!--_FOOT_CONTAINER_-->', name);
             file.contents = new Buffer(content);
             this.push(file);
             cb();
         }))
         .pipe(through.obj(function (file, enc, cb) {
-            var name = rpath.basename(file.path);
+            let name = rpath.basename(file.path);
             name = "<script async defer src='" + 'js/points.js?v='+version + "'></script>";
-            var content = file.contents.toString();
+            let content = file.contents.toString();
             content = content.replace('<!--_OTHER_CONTAINER_-->', name);
             file.contents = new Buffer(content);
             this.push(file);
@@ -428,8 +428,8 @@ gulp.task('edox-dev', function () {
 });
 
 gulp.task('clean', function () {
-    var filePathList = readFileNameList(buildPath);
-    for (var i = 0; i < filePathList.length; i++) {
+    let filePathList = readFileNameList(buildPath);
+    for (let i = 0; i < filePathList.length; i++) {
         fs.unlink(filePathList[i],function (err) {
             if(err){}
         });
@@ -442,7 +442,7 @@ gulp.task('reload', function () {
 })
 
 // 静态服务器 + 监听 less/html/js/images/edox框架源文件
-var proxy_middleware = proxy({
+let proxy_middleware = proxy({
     target: 'http://localhost',
     changeOrigin: true,
     pathRewrite: {
