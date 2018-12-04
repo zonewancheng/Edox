@@ -41,8 +41,8 @@ let precss = require('precss'); //编写Sass的函数
 //let postcss = require('gulp-postcss');
 let autoprefixer = require('autoprefixer');
 
-let developPath = "../src/";
-let buildPath = "../dist/";
+let developPath = "../client/src/";
+let buildPath = "../client/dist/";
 let clean = require('gulp-clean');
 
 let replace = require('gulp-replace');
@@ -106,7 +106,7 @@ gulp.task('pages-css-dev', function () {
             let name = rpath.basename(file.path);
             let css_filename = name.split(".")[0];
             let content = file.contents.toString();
-            fs.writeFile("../dist/css/"+css_filename+".css",content,function () {
+            fs.writeFile(buildPath+"/css/"+css_filename+".css",content,function () {
 
             });
             cb()
@@ -125,7 +125,7 @@ gulp.task('pages-css', function () {
             let name = rpath.basename(file.path);
             let css_filename = name.split(".")[0];
             let content = file.contents.toString();
-            fs.writeFile("../dist/css/"+css_filename+".css",content,function () {
+            fs.writeFile(buildPath+"/css/"+css_filename+".css",content,function () {
 
             });
             cb()
@@ -195,7 +195,7 @@ gulp.task('pages-js-dev', function () {
             let name = rpath.basename(file.path);
             let js_filename = name.split(".")[0];
             let content = file.contents.toString();
-            fs.writeFile("../dist/js/"+js_filename+".js",content,function () {
+            fs.writeFile(buildPath+"/js/"+js_filename+".js",content,function () {
 
             });
             cb()
@@ -219,7 +219,7 @@ gulp.task('pages-js', function () {
             let name = rpath.basename(file.path);
             let js_filename = name.split(".")[0];
             let content = file.contents.toString();
-            fs.writeFile("../dist/js/"+js_filename+".js",content,function () {
+            fs.writeFile(buildPath+"/js/"+js_filename+".js",content,function () {
 
             });
             cb()
@@ -250,7 +250,7 @@ gulp.task('html', function () {
         .pipe(through.obj(function (file, enc, cb) {
             let name = rpath.basename(file.path);
             //console.log("path: "+name)
-            name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
+            name = developPath+"/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
             let that = this;
             //console.log(process.cwd())
             fs.readFile(name,"utf8",function (err,txt) {
@@ -308,7 +308,7 @@ gulp.task('html-dev', function () {
         .pipe(through.obj(function (file, enc, cb) {
             let name = rpath.basename(file.path);
             //console.log("path: "+name)
-            name = "../src/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
+            name = developPath+"/pages/"+name.split(".")[0]+"/tpl."+name.split(".")[0]+".html";
             let that = this;
             //console.log(process.cwd())
             fs.readFile(name,"utf8",function (err,txt) {

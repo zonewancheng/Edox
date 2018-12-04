@@ -55,7 +55,7 @@ let pageList = { //页面列表
     "zone":"你猜，你猜，你猜猜猜；我写，我写，我写写写"
 
 };
-let basePath = "../src/";//生成文件放置的路径
+let basePath = "../client/src/";//生成文件放置的路径
 let reCreate = true;//已有的文件是否重新创建，暂未打算支持， 可扩展
 
 //文件路径不统一覆盖
