@@ -2,63 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c95b52f-a620-4072-8ae7-7396d875aafe" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/js/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/js/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/config/less.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/gulpfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/dist/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/dist/css/zone.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/zui.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/css/zui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/favicon_128.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/favicon_128.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/favicon_32.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/favicon_32.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/icon_128.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/icon_128.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/icon_32.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/icon_32.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/imgs/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/imgs/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/points.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/points.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/rss-parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/rss-parser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/vue-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/vue-router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/zone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/zone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/zone.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/zone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/calendar/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/calendar/calendar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/calendar/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/calendar/calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/calendar/calendar.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/calendar/calendar.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/picker/picker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/picker/picker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/zui.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/zui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/rss.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/data/rss.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edox/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/edox/model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/favicon_128.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/favicon_128.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/favicon_32.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/favicon_32.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/icon_128.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/icon_128.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/icon_32.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/icon_32.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/imgs/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/imgs/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/axios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/component.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/component.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/md5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/points.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/points.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/rss-parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/rss-parser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/vue-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/vue-router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/index.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/index/index.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index/tpl.index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/index/tpl.index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zone/tpl.zone.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/zone/tpl.zone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zone/zone.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/zone/zone.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/zone/zone.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/zone/zone.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/zone.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/zone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/edox.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/config/edox.config.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -76,7 +22,7 @@
       <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10">
+            <state relative-caret-position="1368">
               <caret line="57" column="12" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="12" />
             </state>
           </provider>
@@ -94,40 +40,17 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1153">
-              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+            <state relative-caret-position="190">
+              <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zone.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/dist/zone.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="vue-router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/js/vue-router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/js/router.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
+            <state relative-caret-position="454">
+              <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -135,17 +58,40 @@
       <file leaf-file-name="tpl.index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/pages/index/tpl.index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
+            <state relative-caret-position="672">
               <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edox.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build/edox.config.js">
+      <file leaf-file-name="edox.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build/config/edox.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="less.config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/config/less.config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zui.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/css/zui.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -153,7 +99,7 @@
       <file leaf-file-name=".jshintrc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build/.jshintrc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
+            <state relative-caret-position="288">
               <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
             </state>
           </provider>
@@ -215,7 +161,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/index/index.less.css" />
         <option value="$PROJECT_DIR$/src/css/zui.css" />
         <option value="$PROJECT_DIR$/build/readme.txt" />
         <option value="$PROJECT_DIR$/dist/js/vue.js" />
@@ -266,6 +211,7 @@
         <option value="$PROJECT_DIR$/src/data/rss.json" />
         <option value="$PROJECT_DIR$/build/map.js" />
         <option value="$PROJECT_DIR$/build/gulpfile.js" />
+        <option value="$PROJECT_DIR$/build/config/less.config.js" />
       </list>
     </option>
   </component>
@@ -287,7 +233,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/build/package.json" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="62" />
     <option name="y" value="22" />
     <option name="width" value="1940" />
@@ -330,7 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -342,6 +287,12 @@
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
@@ -361,16 +312,11 @@
               <item name="dist" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -388,16 +334,16 @@
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client" />
-      <recent name="$PROJECT_DIR$/src/data" />
-      <recent name="$PROJECT_DIR$/src/js" />
-      <recent name="$PROJECT_DIR$/src/pages/index" />
-      <recent name="$PROJECT_DIR$/src/pages" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/js" />
       <recent name="$PROJECT_DIR$/src/imgs" />
+      <recent name="$PROJECT_DIR$/src/pages/index" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/build/config" />
+      <recent name="$PROJECT_DIR$/client" />
+      <recent name="$PROJECT_DIR$/src/data" />
+      <recent name="$PROJECT_DIR$/src/js" />
       <recent name="$PROJECT_DIR$/src/pages/index" />
     </key>
   </component>
@@ -471,25 +417,26 @@
       <workItem from="1530532196211" duration="2694000" />
       <workItem from="1530535391937" duration="529000" />
       <workItem from="1530682887852" duration="865000" />
-      <workItem from="1543892599074" duration="2071000" />
+      <workItem from="1543892599074" duration="2371000" />
+      <workItem from="1543919243258" duration="2247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190071000" />
+    <option name="totallyTimeSpent" value="192618000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24524313" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24524313" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32864866" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33454546" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33454546" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39932507" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Salesforce" order="7" />
@@ -507,21 +454,21 @@
       <window_info anchor="bottom" id="Salesforce" order="12" />
       <window_info anchor="bottom" id="Debug Logs" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32864866" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17928496" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Execute Anonymous" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3355856" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -537,13 +484,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1990">
-          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -700,35 +640,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/js/router.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
+        <state relative-caret-position="504">
           <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/.jshintrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/edox.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/pages/index/tpl.index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
+        <state relative-caret-position="672">
           <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
         </state>
       </provider>
@@ -740,27 +666,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
+        <state relative-caret-position="1368">
           <caret line="57" column="12" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/zone.html">
+    <entry file="file://$PROJECT_DIR$/client/dist/css/zui.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/index.html">
+    <entry file="file://$PROJECT_DIR$/client/dist/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1153">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+        <state relative-caret-position="329">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="108" column="35" selection-start-line="108" selection-start-column="35" selection-end-line="108" selection-end-column="35" />
+        <state relative-caret-position="454">
+          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/config/less.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/config/edox.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
