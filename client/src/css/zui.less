@@ -54,18 +54,19 @@ li {
     line-height: 14px;
     padding:13px;
     background: rgba(111,111,111,0.5);
-    color:@defaultBgColor;
+    color:@defaultDisabledFontColor;
     width:auto;
     margin: auto;
     cursor: pointer;
-    border:1px solid orange;
+    border:1px solid none;
     border-radius: 3px;
     text-decoration: none;
+    outline: none;
 }
 .btn:hover{
     background: rgba(66,66,66,0.8);
 }
-input[type=text]{
+input[type=text],input[type=password],input[type=tel],input[type=number]{
     -webkit-appearance: none;
     outline: none;
     height: 34px;

@@ -1,17 +1,19 @@
-<div id='mainPage'>
-    <form method="post" name="loginForm">
-        <div>
-            <label class="form_tr">用户名：</label>
-            <input type="text" id="username" name="username" v-bind:value="loginForm.username" minlength="4" maxlength="16"/>
-            <span class="c-red" v-text="loginForm.username.errorMsg"></span>
+<div id="app">
+    <div id='mainPage'>
+        <div class="loginForm" >
+            <div>
+                <label class="login-label user-name">用户名：</label>
+                <input type="text" placeholder="username" autocomplete="off" id="username" name="username"  minlength="4" maxlength="16"/>
+                <span class="c-red" ></span>
+            </div>
+            <div>
+                <label class="login-label user-pwd">密码：</label>
+                <input type="password" placeholder="password" autocomplete="off" id="password" name="password"  minlength="6" maxlength="16" />
+                <span class="c-red" ></span>
+            </div>
+            <div>
+                <div id="loginForm" class="btn login-btn"  >登录</div>
+            </div>
         </div>
-        <div>
-            <label class="form_tr">密码：</label>
-            <input type="password" id="password" name="password" v-bind:value="appcontroller.password" minlength="6" maxlength="16" />
-            <span class="c-red" v-text="loginForm.password.errorMsg"></span>
-        </div>
-        <div>
-            <input id="loginForm" class="form_btn_blue" type="submit" value="登录" v-bind:click="" />
-        </div>
-    </form>
+    </div>
 </div>
