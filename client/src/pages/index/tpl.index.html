@@ -13,12 +13,7 @@
 -->
 </div>
 <div id='mainPage'>
-    <section class="rss-name-title">
-        <template>
-            {{title}}
-            <!--<a href="/zone.html">zone</a>-->
-        </template>
-    </section>
+    <header-comp></header-comp>
     <section class="rss-menu">
         <template>
             <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">

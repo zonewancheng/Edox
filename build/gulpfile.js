@@ -50,6 +50,10 @@ let through = require('through2');
 let version = new Date().getTime();
 let proxy = require('http-proxy-middleware');
 
+let rename    = require('gulp-rename');
+let VueModule = require('gulp-vue-module');
+let vueify = require('gulp-vueify');
+
 
 //获取文件夹下所有的文件名字并返回一个数组
 let readFileNameList = function (path) {
@@ -88,7 +92,6 @@ gulp.task('css', function () {
         //.pipe(sourcemaps.write())
         .pipe(gulp.dest(buildPath + "css/"))
 })
-
 // 编译less,并压缩css输出到目标目录
 gulp.task('css-dev', function () {
     return gulp.src(developPath + "css/**")
@@ -111,6 +114,23 @@ gulp.task('pages-css-dev', function () {
             });
             cb()
         }))
+})
+
+
+// 编译less,并压缩css输出到目标目录
+gulp.task('comp-css-dev', function () {
+	return gulp.src(developPath + "component/**/*.less")
+		.pipe(less())
+		.pipe(postcss([autoprefixer({browsers: ['last 2 versions']})]))
+		.pipe(through.obj(function (file, enc, cb) {
+			let name = rpath.basename(file.path);
+			let css_filename = name.split(".")[0];
+			let content = file.contents.toString();
+			fs.writeFile(buildPath+"/component/"+css_filename+"/"+css_filename+".css",content,function () {
+			
+			});
+			cb()
+		}))
 })
 // 编译less,并压缩css输出到目标目录
 gulp.task('pages-css', function () {
@@ -178,12 +198,45 @@ gulp.task('js', function () {
 
 });
 
+gulp.task('comp-js', function () {
+	return gulp.src((developPath + 'component/**/*.js'))
+		.pipe(sourcemaps.init())
+		.pipe(babel({
+			presets: [env]
+		}))
+		.pipe(jshint(".jshintrc"))  /*Jshint可在package.json配置，也可在.jshintrc处配置。默认在单独文件中配置*/
+		.pipe(jshint.reporter("default"))
+		.pipe(jshint.reporter(stylish))
+		.pipe(uglify({mangle: false}))
+		//.pipe(sourcemaps.write())
+		.on('error', function (e) {
+			console.log(e);
+		})
+		.pipe(gulp.dest(buildPath + "component/"))
+	
+});
 gulp.task('js-dev', function () {
     return gulp.src((developPath + 'js/**'))
         .pipe(babel({
             presets: [env]
         }))
         .pipe(gulp.dest(buildPath + "js/"))
+});
+
+gulp.task('comp-js-dev', function () {
+	return gulp.src((developPath + 'component/**/*.js'))
+		.pipe(babel({
+			presets: [env]
+		}))
+		.pipe(through.obj(function (file, enc, cb) {
+			let name = rpath.basename(file.path);
+			let js_filename = name.split(".")[0];
+			let content = file.contents.toString();
+			fs.writeFile(buildPath+"component/"+js_filename+"/"+js_filename+".js",content,function () {
+			
+			});
+			cb()
+		}))
 });
 
 gulp.task('pages-js-dev', function () {
@@ -427,6 +480,21 @@ gulp.task('edox-dev', function () {
         .pipe(gulp.dest(buildPath + "edox/"))
 });
 
+//打包vue组件
+gulp.task('vue', function() {
+	return gulp.src(developPath+'/component/**/*.vue')
+		.pipe(VueModule({
+			debug : true
+		}))
+		.pipe(rename({extname : ".js"}))
+		.pipe(gulp.dest(developPath+"component/"));
+});
+//打包vue组件
+gulp.task('vueify', function () {
+	return gulp.src(developPath+'component/**/*.vue')
+		.pipe(vueify())
+		.pipe(gulp.dest(developPath+"component/"));
+});
 gulp.task('clean', function () {
     let filePathList = readFileNameList(buildPath);
     for (let i = 0; i < filePathList.length; i++) {
@@ -464,14 +532,18 @@ gulp.task('server', function () {
 
     });
     gulp.watch(developPath + "**/*").on('change', function () {
-        runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");
+        runSequence("clean", ["comp-css-dev","css-dev", "html-dev","comp-js-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");
     });
 });
 
+//本地开发执行测试打包任务
+gulp.task('test', function () {
+	runSequence("vueify");
+});
 
 //本地开发执行默认任务
 gulp.task('default', function () {
-    runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev", "images-dev"], "server");
+    runSequence("clean", ["comp-css-dev","css-dev", "html-dev", "comp-js-dev","js-dev","pages-js-dev","pages-css-dev", "images-dev"], "server");
 });
 
 //执行打包发布任务(不压缩)

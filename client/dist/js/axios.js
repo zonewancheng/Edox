@@ -1092,7 +1092,7 @@
                         var originURL;
 
                         /**
-                         * Parse a URL to discover it's components
+                         * Parse a URL to discover it's component
                          *
                          * @param {String} url The URL to be parsed
                          * @returns {Object}

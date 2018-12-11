@@ -12,7 +12,7 @@
 ######  安装项目依赖文件
     npm install
 ######  在build/map.js中配置需要生成的页面模版文件后执行（此处已有示例）
-    node map.js (注意：此处会覆盖 src目录 最外层的 html文件 ⚠️)
+    node map.js (注意：此处会覆盖 client/src目录 最外层的 html文件 ⚠️)
 ### 开始使用
 ######  本地开发模式
     gulp

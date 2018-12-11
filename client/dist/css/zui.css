@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-* @des: 常用样式汇总
+* @desc: 常用样式汇总
 * @author: zone
 */
 * {
@@ -65,7 +65,7 @@ li {
   line-height: 14px;
   padding: 13px;
   background: rgba(111, 111, 111, 0.5);
-  color: #fff;
+  color: "#fff";
   width: auto;
   margin: auto;
   cursor: pointer;
