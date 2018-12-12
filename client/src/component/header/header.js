@@ -1,6 +1,6 @@
 Vue.component('header-comp',{
 	template:"#header-template",
-	props:[],
+	props:["title"],
 	data:function () {
 		return {}
 	},

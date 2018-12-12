@@ -35,6 +35,7 @@ let headerReplace = [
     ],
     footerReplace = [
 	    //'<script  type="text/javascript" src="js/requirejs.js?v='+version+'"></script>',
+	    '<script  type="text/javascript" src="js/common.js?v='+version+'"></script>',
 	    '<script  type="text/javascript" src="js/vue.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/vue-router.js?v='+version+'"></script>',
         '<script  type="text/javascript" src="js/router.js?v='+version+'"></script>',
@@ -62,19 +63,55 @@ let pageList = [ //页面列表
         "header"
         ]
     },
-    {name:"list",title:"文章列表"},
-    {name:"zone",title:"你猜，你猜，你猜猜猜；我写，我写，我写写写"},
-    {name:"login",title:"登录"},
-    {name:"register",title:"注册"},
-    {name:"404",title:"404"},
-    {name:"links",title:"链接"},
-    {name:"logout",title:"退出"},
-    {name:"upload",title:"上传"},
-    {name:"article",title:"文章"},
-    {name:"user",title:"用户"},
-    {name:"error",title:"错误信息"},
-    {name:"edit",title:"编辑页面"},
-    {name:"comments",title:"评论"}
+    {
+    	name:"list",title:"文章列表",
+	    components:[
+		    "header"
+	    ]
+    },
+    {
+    	name:"zone",title:"你猜，你猜，你猜猜猜；我写，我写，我写写写",
+	    components:[
+		    "header"
+	    ]
+    },
+    {
+    	name:"login",title:"登录",
+	    components:[
+		    "header"
+	    ]},
+    {
+    	name:"register",title:"注册",
+	    components:[
+		    "header"
+	    ]},
+    {name:"404",title:"404",components:[
+		    "header"
+	    ]},
+    {name:"links",title:"链接",components:[
+		    "header"
+	    ]},
+    {name:"logout",title:"退出",components:[
+		    "header"
+	    ]},
+    {name:"upload",title:"上传",components:[
+		    "header"
+	    ]},
+    {name:"article",title:"文章",components:[
+		    "header"
+	    ]},
+    {name:"user",title:"用户",components:[
+		    "header"
+	    ]},
+    {name:"error",title:"错误信息",components:[
+		    "header"
+	    ]},
+    {name:"edit",title:"编辑页面",components:[
+		    "header"
+	    ]},
+    {name:"comments",title:"评论",components:[
+		    "header"
+	    ]}
 ];
 let developPath = "../client/src/";
 let basePath = "../client/src/";//生成文件放置的路径
@@ -142,13 +179,13 @@ for (let key in pageList) {
 			    "<head>\n" +
 			    otherCSS +
 			    "<title>" + _key.title + "</title>\n" +
-			    headerReplace.join("") + "\n" +
+			    headerReplace.join("\n") +
 			    head + "\n" +
 			    "</head>\n" +
 			    "<body>\n" +
 			    body + "\n" +
 			    "</body>\n" +
-			    footerReplace.join("") + "\n" +
+			    footerReplace.join("\n") +
 			    foot +
 			    other + "\n" +
 			    "</html>";

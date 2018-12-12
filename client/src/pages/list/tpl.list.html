@@ -1,9 +1,13 @@
-<div id='mainPage'>
-    <ul class="archive">
-        <template v-for="post in posts">
-            <li><h3>{{post.time.year}}</h3></li>
-            <li><time>{{post.time.day}}</time></li>
-            <li><a href="/blog/{{encodeURIComponent(post.username)}}/{{encodeURIComponent(post.time.minute)}}/{{encodeURIComponent(post.title)}}">{{post.title}}</a></li>
-        </template>
-    </ul>
+<div id="app">
+    <div id='mainPage'>
+        <header-comp title="上古有大能者，以日为食，以月为饮"></header-comp>
+        <ul class="archive-list">
+            <template>
+                <li v-for="post in posts">
+                    <h3>{{post.time.year}}</h3><label>{{post.time.day}}</label>
+                    <a :href="post.href">{{post.title}}</a>
+                </li>
+            </template>
+        </ul>
+    </div>
 </div>

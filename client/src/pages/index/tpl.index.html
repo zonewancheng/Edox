@@ -11,49 +11,50 @@
     &lt;!&ndash; 路由匹配到的组件将渲染在这里 &ndash;&gt;
     <router-view></router-view>
 -->
-</div>
-<div id='mainPage'>
-    <header-comp></header-comp>
-    <section class="rss-menu">
-        <template>
-            <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
-                {{item.name}}
-            </a>
-        </template>
-    </section>
-    <section class="rss-article-list">
-        <template>
-            <div v-for="key in siteList">
-                <article-list-comp :article-list="key.articleList" :name="key.name"></article-list-comp>
-            </div>
-        </template>
-    </section>
-</div>
 
-<script type="text/template" id="rss-articleList">
-    <section>
-        <div :id="name" :class="hide?'rss-title rss-title-hide':'rss-title'"
-             v-on:click="toggle" v-html="name"></div>
-        <template v-if="!hide">
-            <div class="rss-article" v-for="item in articleList">
-                <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
-                <em v-html="item.date"></em>
-                <label v-html="item.author"></label>
-                <div class="mark">
-                    <span v-for=" mk in item.mark">{{mk}}</span>
+    <div id='mainPage'>
+        <header-comp title="上古有大能者，以日为食，以月为饮"></header-comp>
+        <section class="rss-menu">
+            <template>
+                <a :href="'#'+item.name" class="rss-menu-item" v-for="item in siteList">
+                    {{item.name}}
+                </a>
+            </template>
+        </section>
+        <section class="rss-article-list">
+            <template>
+                <div v-for="key in siteList">
+                    <article-list-comp :article-list="key.articleList" :name="key.name"></article-list-comp>
                 </div>
-            </div>
-        </template>
-        <template v-if="articleList.length==0&&!hide">
-            <div class="rss-article">
-                <div class="loading">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            </template>
+        </section>
+    </div>
+
+    <script type="text/template" id="rss-articleList">
+        <section>
+            <div :id="name" :class="hide?'rss-title rss-title-hide':'rss-title'"
+                 v-on:click="toggle" v-html="name"></div>
+            <template v-if="!hide">
+                <div class="rss-article" v-for="item in articleList">
+                    <a :href="item.link" target="_blank"><h4 :title="item.title">{{item.title}}</h4></a>
+                    <em v-html="item.date"></em>
+                    <label v-html="item.author"></label>
+                    <div class="mark">
+                        <span v-for=" mk in item.mark">{{mk}}</span>
+                    </div>
                 </div>
-            </div>
-        </template>
-    </section>
-</script>
+            </template>
+            <template v-if="articleList.length==0&&!hide">
+                <div class="rss-article">
+                    <div class="loading">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </template>
+        </section>
+    </script>
+</div>
