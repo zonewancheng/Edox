@@ -3,10 +3,12 @@
         <header-comp title="日积月累，坚持不懈"></header-comp>
         <ul class="archive-list">
             <template>
-                <li v-for="post in posts">
-                    <h3>{{post.time.year}}</h3>
-                    <label class="article-time">{{post.time.day}}</label>
-                    <a class="article-title" :href="post.href">{{post.title}}</a>
+                <li v-for="(post,index) in posts">
+                    <h3 class="article-year" v-if="index==0 || posts[index-1].time.year!=post.time.year">{{post.time.year}}</h3>
+                    <div class="article-title-line">
+                        <label class="article-time">{{post.time.day}}</label>
+                        <a :title="post.title" class="article-title" :href="post.href">{{post.title}}</a>
+                    </div>
                 </li>
             </template>
         </ul>

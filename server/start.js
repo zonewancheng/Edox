@@ -39,7 +39,7 @@ app.use(function(err, req, res, next){
     next();
 });
 //定义icon图标
-app.use(favicon(__dirname + '/public/imgs/favicon.ico'));
+//app.use(favicon(__dirname + '/public/imgs/favicon.ico'));
 //定义日志和输出级别
 app.use(logger('dev'));
 app.use(logger({stream: accessLog}));
