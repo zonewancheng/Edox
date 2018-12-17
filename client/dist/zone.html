@@ -17,7 +17,7 @@
 <link rel="apple-touch-icon" href="imgs/icon.png">
 <link rel=dns-prefetch href="http://www.xicer.com" >
 <link rel=dns-prefetch href="http://www.xicer.com" >
-<link rel="stylesheet" href="css/zui.css?v=1544582491717" ><link rel='stylesheet' href='css/zone.css?v=1544783046719'>
+<link rel="stylesheet" href="css/zui.css?v=1544786194807" ><link rel='stylesheet' href='css/zone.css?v=1544796823883'>
 </head>
 <body>
 <div id='eDox-container'><div id='mainPage'>
@@ -40,17 +40,28 @@
     </section>
 </div></div>
 </body>
-<script  type="text/javascript" src="js/common.js?v=1544582491717"></script>
-<script  type="text/javascript" src="js/vue.js?v=1544582491717"></script>
-<script  type="text/javascript" src="js/vue-router.js?v=1544582491717"></script>
-<script  type="text/javascript" src="js/router.js?v=1544582491717"></script>
-<script  type="text/javascript" src="js/component.js?v=1544582491717"></script>
-<script  type="text/javascript" src="js/rss-parser.js?v=1544582491717"></script>
-<script  type="text/javascript" src="js/axios.js?v=1544582491717"></script><script async defer src='js/zone.js?v=1544783046719'></script><script type='text/javascript' src='component/header/header.js'></script>
+<script  type="text/javascript" src="js/common.js?v=1544786194807"></script>
+<script  type="text/javascript" src="js/vue.js?v=1544786194807"></script>
+<script  type="text/javascript" src="js/vue-router.js?v=1544786194807"></script>
+<script  type="text/javascript" src="js/router.js?v=1544786194807"></script>
+<script  type="text/javascript" src="js/component.js?v=1544786194807"></script>
+<script  type="text/javascript" src="js/rss-parser.js?v=1544786194807"></script>
+<script  type="text/javascript" src="js/axios.js?v=1544786194807"></script><script async defer src='js/zone.js?v=1544796823883'></script><script type='text/javascript' src='component/header/header.js'></script>
 <script type='text/template' id='header-template'>
-<div class="edox-header">
-    {{title}}
+<div>
+    <div class="edox-header">
+        {{title}}
+        <label v-on:click="hideMenu" v-if="showMenu" class="edox-menu">★★★★★</label>
+        <label v-on:click="openMenu" v-if="!showMenu" class="edox-menu">☆☆☆☆☆</label>
+    </div>
+    <div class="edox-slide-menu" v-if="showMenu">
+        <div class="edox-menu-title"> ※ 菜单栏～</div>
+        <ul class="edox-menu-list">
+            <li class="edox-menu-item" v-for="m in menuList">{{m}}</li>
+        </ul>
+    </div>
 </div>
+
 
 </script>
 </html>

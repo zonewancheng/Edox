@@ -23,15 +23,15 @@ var errorHandler   = require('errorhandler');
 var server         = http.Server( app );
 
 // view engine setup
-app.set( 'port', process.env.PORT || 3000 ); //服务启动端口
+//app.set( 'port', process.env.PORT || 3000 ); //服务启动端口
 //定义ejs模板引擎和模板文件位置
-app.set( 'views', __dirname + '/views' );
-app.set( 'view engine', 'ejs' );
+//app.set( 'views', __dirname + '/views' );
+//app.set( 'view engine', 'ejs' );
 
 //页面通知（即成功与错误信息的显示）的功能
-app.use(flash());
-app.use( express.static( path.join( __dirname, 'public' ))); //静态文件路径
-app.use( express.static( path.join( __dirname, 'upload' ))); //静态文件路径
+//app.use(flash());
+//app.use( express.static( path.join( __dirname, 'public' ))); //静态文件路径
+//app.use( express.static( path.join( __dirname, 'upload' ))); //静态文件路径
 //记录错误日志
 app.use(function(err, req, res, next){
     var meta = '['+ new Date() +']' + req.url + '\n';
@@ -80,8 +80,8 @@ if('development' == app.get('env')){
   app.use(errorHandler());
 }
 
-server.listen( app.get( 'port' ), function(){                     //监听服务端口
-    console.log( 'root server listening on port ' + app.get( 'port' ),app.settings.env);
-});
+// server.listen( app.get( 'port' ), function(){                     //监听服务端口
+//     console.log( 'root server listening on port ' + app.get( 'port' ),app.settings.env);
+// });
 
 module.exports = app;

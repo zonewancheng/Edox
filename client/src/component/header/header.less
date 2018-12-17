@@ -1,15 +1,60 @@
-.edox-header{
-  font-size:16px;
-  color:#fff;
+.edox-header {
+  font-size: 16px;
+  color: #fff;
   background: #ff7f36;
-  height:44px;
-  width:100%;
+  height: 44px;
+  width: 100%;
   display: block;
   line-height: 44px;
   text-align: center;
   position: fixed;
   font-weight: 500;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 99;
+  .edox-menu {
+    position: absolute;
+    display: inline-block;
+    height: 100%;
+    width: auto;
+    right: 0;
+    padding: 0 5px;
+    color: #ff1028;
+    cursor: pointer;
+    background: transparent;
+    -webkit-tap-highlight-color:transparent;
+  }
+}
+
+.edox-slide-menu {
+  position: fixed;
+  width: 10%;
+  max-width: 320px;
+  min-width: 200px;
+  background: #fff;
+  z-index: 98;
+  right: 0;
+  height: 100%;
+  top: 44px;
+  border-left: 1px solid #ff6540;
+  border-bottom:1px solid #ff6540;
+  .edox-menu-title {
+    height: 44px;
+    text-align: center;
+    color: #fff;
+    background: #ff6540;
+    font-size: 18px;
+    line-height: 44px;
+  }
+  .edox-menu-item {
+    color: #333;
+    font-size: 16px;
+    line-height: 34px;
+    text-align: left;
+    padding:0 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px #f5f5f5;
+  }
 }

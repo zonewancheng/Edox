@@ -1,3 +1,14 @@
-<div class="edox-header">
-    {{title}}
+<div>
+    <div class="edox-header">
+        {{title}}
+        <label v-on:click="hideMenu" v-if="showMenu" class="edox-menu">★★★★★</label>
+        <label v-on:click="openMenu" v-if="!showMenu" class="edox-menu">☆☆☆☆☆</label>
+    </div>
+    <div class="edox-slide-menu" v-if="showMenu">
+        <div class="edox-menu-title"> ※ 菜单栏～</div>
+        <ul class="edox-menu-list">
+            <li class="edox-menu-item" v-for="m in menuList">{{m}}</li>
+        </ul>
+    </div>
 </div>
+
