@@ -8,8 +8,8 @@ let {
 	GraphQLID
 } = require('graphql');
 
-let UserType = require('userTypeQL');
-let User = require('userSchema');
+let UserType = require('./userTypeQL');
+let User = require('./userSchema');
 
 module.exports =  {
 	users: {

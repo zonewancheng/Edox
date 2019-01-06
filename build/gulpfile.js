@@ -53,6 +53,7 @@ let proxy = require('http-proxy-middleware');
 let rename    = require('gulp-rename');
 let VueModule = require('gulp-vue-module');
 let vueify = require('gulp-vueify');
+let cmd = require('node-cmd');
 
 
 //获取文件夹下所有的文件名字并返回一个数组
@@ -80,7 +81,14 @@ gulp.task('pkg', function () {
     return;
 })
 
-
+gulp.task('cmd',function () {
+    return cmd.get(
+	    'node cmd.js',
+	    function(err, data, stderr){
+		    console.log('the current working dir is : ',data)
+	    }
+    );
+});
 // 编译less,并压缩css输出到目标目录
 gulp.task('css', function () {
     return gulp.src(developPath + "css/**")
@@ -511,28 +519,28 @@ gulp.task('reload', function () {
 
 // 静态服务器 + 监听 less/html/js/images/edox框架源文件
 let proxy_middleware = proxy({
-    target: 'http://localhost',
+    target: 'http://dev.xicer.com',
     changeOrigin: true,
     pathRewrite: {
-        'http://localhost' : 'http://dev.xicer.com'
+        'http://dev.xicer.com' : 'http://localhost:3000'
     },
     router: {
         // when request.headers.host == 'dev.localhost:3000',
         // override target 'http://www.example.org' to 'http://localhost:8000'
-        'http://localhost:3000' : 'http://dev.xicer.com'
+        'http://dev.xicer.com' : 'http://localhost:3000'
     }
 });
 
 gulp.task('server', function () {
     browserSync.init({
         server: buildPath,
-        index:"index.html",
+        index:"list.html",
         //https:true,
         //middleware:[proxy_middleware]
 
     });
     gulp.watch(developPath + "**/*").on('change', function () {
-        runSequence("clean", ["comp-css-dev","css-dev", "html-dev","comp-js-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");
+        runSequence("clean", ["cmd","comp-css-dev","css-dev", "html-dev","comp-js-dev", "js-dev","pages-js-dev","pages-css-dev","images-dev"], "reload");
     });
 });
 
@@ -543,16 +551,16 @@ gulp.task('test', function () {
 
 //本地开发执行默认任务
 gulp.task('default', function () {
-    runSequence("clean", ["comp-css-dev","css-dev", "html-dev", "comp-js-dev","js-dev","pages-js-dev","pages-css-dev", "images-dev"], "server");
+    runSequence("clean", ["cmd","comp-css-dev","css-dev", "html-dev", "comp-js-dev","js-dev","pages-js-dev","pages-css-dev", "images-dev"], "server");
 });
 
 //执行打包发布任务(不压缩)
 gulp.task('develop', function () {
-    runSequence("clean", ["css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev", "images-dev"]);
+    runSequence("clean", ["cmd","css-dev", "html-dev", "js-dev","pages-js-dev","pages-css-dev", "images-dev"]);
 });
 
 //执行打包发布任务
 gulp.task('product', function () {
-    runSequence("clean", ["html", "css", "js","pages-js" ,"pages-css","images"]);
+    runSequence("clean", ["cmd","html", "css", "js","pages-js" ,"pages-css","images"]);
 });
 

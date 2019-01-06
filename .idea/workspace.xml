@@ -2,133 +2,219 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c95b52f-a620-4072-8ae7-7396d875aafe" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/dist/css/zui.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/css/zui.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmd.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/dist/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/dist/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/dist/js/rss-parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/js/rss-parser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/dist/zone.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/dist/zone.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/article.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/comments.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/comments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/header/header.htm" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/header/header.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/component/header/header.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/component/header/header.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/zui.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/zui.less" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/error.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/js/rss-parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/js/rss-parser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/links.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/links.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/list/list.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/list/list.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/article/article.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/article/article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/article/article.less" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/article/article.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/article/tpl.article.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/article/tpl.article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/list/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/list/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/list/tpl.list.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/list/tpl.list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/upload.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/zone.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/zone.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/start.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/start.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/Hobby/HobbyMutationsQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/Hobby/HobbyQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/Hobby/HobbyQueriesQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/Hobby/HobbySchema.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/Hobby/HobbyTypeQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/User/UserMutationsQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/User/UserQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/User/UserQueriesQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/User/UserSchema.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/Models/User/UserTypeQL.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/schema.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/scripts/populationScript.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/scripts/updateSchema.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dbserver/server.es6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/routes/issue.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/routes/issue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/post/postQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/post/postQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/post/postQueriesQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/post/postQueriesQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/post/postSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/post/postSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/post/postTypeQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/post/postTypeQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/rootSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/rootSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/user/userMutationQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/user/userMutationQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/user/userQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/user/userQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/user/userQueriesQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/user/userQueriesQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/user/userSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/user/userSchema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/schema/user/userTypeQL.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/schema/user/userTypeQL.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mydbserver/sql.js" beforeDir="false" afterPath="$PROJECT_DIR$/mydbserver/sql.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/configs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/models/HelloModel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/models/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/routers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/routers/modelRouters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/routers/schemaRouters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/mutations/add.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/mutations/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/mutations/remove.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/mutations/update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/queries/hello.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/queries/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/types/Hello.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/types/HelloAddInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/types/HelloFields.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/HelloSchema/types/HelloUpdateInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/schemas/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serveless/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/components/Html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/components/Layout/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/components/Layout/Layout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/components/Layout/Navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/components/Layout/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/core/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/data/schema.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/routes/HomePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/routes/NotFound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/routes/about/AboutPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/routes/about/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servers/tools/webpack.config.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Edox" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="start.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/start.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/pages/article/article.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+            <state relative-caret-position="139">
+              <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/pages/article/tpl.article.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/pages/article/article.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mydbserver/schema/post/postQL.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/dist/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="32" column="16" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/js/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mydbserver/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#1954#1994#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/controls/user.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="33" column="39" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="39" />
+            <state relative-caret-position="739">
+              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/pages/list/tpl.list.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mydbserver/schema/post/postSchema.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="50" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="50" />
+            <state relative-caret-position="391">
+              <caret line="53" column="68" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.less">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.htm" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/component/header/header.htm">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/component/header/header.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zui.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/css/zui.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/component/header/header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="20" />
+            <state relative-caret-position="1752">
+              <caret line="73" column="18" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -146,16 +232,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>router</find>
-      <find>pages-js-dev</find>
-      <find>images</find>
-      <find>babel</find>
-      <find>js-dev</find>
-      <find>Edox</find>
-      <find>css</find>
-      <find>zui.less</find>
-      <find>controls/user.js</find>
-      <find>post.js</find>
       <find>./db</find>
       <find>models</find>
       <find>/settings</find>
@@ -176,6 +252,16 @@
       <find>rss-article-list</find>
       <find>loginForm</find>
       <find>routes</find>
+      <find>var</find>
+      <find>format</find>
+      <find>tac</find>
+      <find>DB == connect to mongodb</find>
+      <find>cmd</find>
+      <find>axios</find>
+      <find>settings</find>
+      <find>issue</find>
+      <find>schema</find>
+      <find>UserSchema</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -190,6 +276,8 @@
       <replace>env</replace>
       <replace>edox</replace>
       <replace>_key.name</replace>
+      <replace>let</replace>
+      <replace>formatStr</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -198,80 +286,70 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dist/zone.html" />
-        <option value="$PROJECT_DIR$/src/pages/index/index.less" />
-        <option value="$PROJECT_DIR$/src/pages/zone/zone.less" />
-        <option value="$PROJECT_DIR$/src/pages/zone/tpl.zone.html" />
-        <option value="$PROJECT_DIR$/src/js/router.js" />
-        <option value="$PROJECT_DIR$/src/pages/index/index.js" />
-        <option value="$PROJECT_DIR$/dist/index.html" />
-        <option value="$PROJECT_DIR$/src/pages/index/tpl.index.html" />
-        <option value="$PROJECT_DIR$/src/js/common.js" />
-        <option value="$PROJECT_DIR$/src/edox/model.js" />
-        <option value="$PROJECT_DIR$/src/data/rss.json" />
-        <option value="$PROJECT_DIR$/build/config/less.config.js" />
-        <option value="$PROJECT_DIR$/client/src/components/header/header.less" />
-        <option value="$PROJECT_DIR$/client/src/js/util/multerUtil.js" />
-        <option value="$PROJECT_DIR$/client/src/pages/article/tpl.article.html" />
-        <option value="$PROJECT_DIR$/client/src/components/menu/menu.html" />
-        <option value="$PROJECT_DIR$/client/src/components/menu/menu.js" />
-        <option value="$PROJECT_DIR$/client/src/css/common.less" />
-        <option value="$PROJECT_DIR$/server/model/user.js" />
-        <option value="$PROJECT_DIR$/server/routes/issue.js" />
-        <option value="$PROJECT_DIR$/server/routes/index.js" />
-        <option value="$PROJECT_DIR$/server/config/site.js" />
-        <option value="$PROJECT_DIR$/client/src/components/header/header.html" />
-        <option value="$PROJECT_DIR$/client/src/components/menu/menu.vue" />
-        <option value="$PROJECT_DIR$/client/src/components/header/header.vue" />
-        <option value="$PROJECT_DIR$/client/src/js/requirejs.js" />
-        <option value="$PROJECT_DIR$/client/src/js/router.js" />
-        <option value="$PROJECT_DIR$/client/dist/js/index.js" />
-        <option value="$PROJECT_DIR$/client/src/component/header/header.vue" />
-        <option value="$PROJECT_DIR$/client/src/component/header/header.html" />
-        <option value="$PROJECT_DIR$/client/src/pages/index/index.js" />
-        <option value="$PROJECT_DIR$/build/gulpfile.js" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/client/src/pages/login/login.js" />
-        <option value="$PROJECT_DIR$/client/src/css/lessConfig.less" />
-        <option value="$PROJECT_DIR$/client/dist/js/common.js" />
-        <option value="$PROJECT_DIR$/build/map.js" />
-        <option value="$PROJECT_DIR$/client/src/js/common.js" />
-        <option value="$PROJECT_DIR$/client/src/pages/index/index.less" />
-        <option value="$PROJECT_DIR$/client/src/pages/index/tpl.index.html" />
-        <option value="$PROJECT_DIR$/client/src/pages/list/list.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/client/src/pages/login/tpl.login.html" />
         <option value="$PROJECT_DIR$/client/src/pages/login/login.less" />
-        <option value="$PROJECT_DIR$/client/src/pages/list/tpl.list.html" />
         <option value="$PROJECT_DIR$/client/src/component/header/header.js" />
         <option value="$PROJECT_DIR$/client/src/component/header/header.htm" />
         <option value="$PROJECT_DIR$/client/src/css/zui.less" />
         <option value="$PROJECT_DIR$/client/src/component/header/header.less" />
         <option value="$PROJECT_DIR$/client/src/pages/list/list.less" />
+        <option value="$PROJECT_DIR$/client/src/js/tools/validator.js" />
+        <option value="$PROJECT_DIR$/client/src/js/tools/processDate.js" />
+        <option value="$PROJECT_DIR$/client/src/js/tools/minApp.js" />
+        <option value="$PROJECT_DIR$/client/src/pages/index/index.js" />
+        <option value="$PROJECT_DIR$/client/src/js/tools.js" />
+        <option value="$PROJECT_DIR$/client/src/js/tools/common.js" />
+        <option value="$PROJECT_DIR$/client/src/js/tools/date.js" />
+        <option value="$PROJECT_DIR$/server/app.js" />
+        <option value="$PROJECT_DIR$/server/db/settings.js" />
+        <option value="$PROJECT_DIR$/mydb/db.js" />
+        <option value="$PROJECT_DIR$/server/exe.js" />
         <option value="$PROJECT_DIR$/server/start.js" />
+        <option value="$PROJECT_DIR$/build/exe.js" />
+        <option value="$PROJECT_DIR$/server/dbserver.js" />
+        <option value="$PROJECT_DIR$/mydbserver/config.js" />
+        <option value="$PROJECT_DIR$/mydbserver/dao.js" />
+        <option value="$PROJECT_DIR$/mydbserver/models/user.js" />
+        <option value="$PROJECT_DIR$/mydbserver/sql.js" />
+        <option value="$PROJECT_DIR$/build/cmd.js" />
+        <option value="$PROJECT_DIR$/build/gulpfile.js" />
+        <option value="$PROJECT_DIR$/servers/data/schema.js" />
+        <option value="$PROJECT_DIR$/build/map.js" />
+        <option value="$PROJECT_DIR$/mydbserver/routes/issue.js" />
+        <option value="$PROJECT_DIR$/mydbserver/routes/index.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userSql.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userQueruesQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userQueriesQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userMutationQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userTypeQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/server.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/user/userSchema.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/post/postQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/rootSchema.js" />
+        <option value="$PROJECT_DIR$/client/src/pages/list/tpl.list.html" />
+        <option value="$PROJECT_DIR$/client/src/pages/list/list.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/post/postTypeQL.js" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/post/postQueriesQL.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/mydbserver/schema/post/postSchema.js" />
+        <option value="$PROJECT_DIR$/client/dist/js/common.js" />
+        <option value="$PROJECT_DIR$/client/src/js/common.js" />
+        <option value="$PROJECT_DIR$/client/src/pages/article/article.js" />
+        <option value="$PROJECT_DIR$/client/src/pages/article/article.less" />
+        <option value="$PROJECT_DIR$/client/src/pages/article/tpl.article.html" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/build/node_modules" />
-    <handled-path value="$PROJECT_DIR$/server/node_modules" />
-  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/build/package.json" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="62" />
     <option name="y" value="22" />
     <option name="width" value="1940" />
@@ -324,30 +402,72 @@
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="controls" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
               <item name="Edox" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="mydbserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="mydbserver" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="mydbserver" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+              <item name="hobby" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="mydbserver" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+              <item name="post" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Edox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Edox" type="462c0819:PsiDirectoryNode" />
+              <item name="mydbserver" type="462c0819:PsiDirectoryNode" />
+              <item name="schema" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -373,18 +493,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/build" />
       <recent name="$PROJECT_DIR$/build/config" />
       <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/src/data" />
-      <recent name="$PROJECT_DIR$/src/js" />
-      <recent name="$PROJECT_DIR$/src/pages/index" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mydbserver/schema/post" />
+      <recent name="$PROJECT_DIR$/mydbserver/db" />
+      <recent name="$PROJECT_DIR$/mydbserver" />
+      <recent name="$PROJECT_DIR$/dbserver" />
       <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/server/db" />
-      <recent name="$PROJECT_DIR$/server/tools" />
-      <recent name="$PROJECT_DIR$/server/routes" />
-      <recent name="$PROJECT_DIR$/client/src/js/util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -399,31 +519,44 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.start.js">
-    <configuration name="tpl.index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Edox/src/pages/index/tpl.index.html" />
-    <configuration name="map.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="map.js" working-dir="$PROJECT_DIR$/build" />
-    <configuration name="start.js" type="NodeJSConfigurationType" factoryName="Node.js" nameIsGenerated="true" path-to-js-file="start.js" working-dir="$PROJECT_DIR$/server" />
-    <configuration name="default" type="js.build_tools.gulp" factoryName="Gulp.js" temporary="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile>$PROJECT_DIR$/build/gulpfile.js</gulpfile>
-      <tasks>
-        <task>default</task>
-      </tasks>
-      <arguments />
-      <envs />
+  <component name="RunManager" selected="Node.js.server.js">
+    <configuration name="cmd.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/build/cmd.js" working-dir="$PROJECT_DIR$/build">
+      <method v="2" />
+    </configuration>
+    <configuration name="dbserver.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="dbserver.js" working-dir="$PROJECT_DIR$/server">
+      <method v="2" />
+    </configuration>
+    <configuration name="map.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="map.js" working-dir="$PROJECT_DIR$/build">
+      <method v="2" />
+    </configuration>
+    <configuration name="rootSchema.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/mydbserver/schema/rootSchema.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/mydbserver">
+      <method v="2" />
+    </configuration>
+    <configuration name="start.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="start.js" working-dir="$PROJECT_DIR$/server">
+      <method v="2" />
+    </configuration>
+    <configuration name="userSchema.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/mydbserver/schema/user/userSchema.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Node.js.start.js" />
-      <item itemvalue="Gulp.js.default" />
-      <item itemvalue="JavaScript Debug.tpl.index.html" />
+      <item itemvalue="Node.js.server.js" />
+      <item itemvalue="Node.js.rootSchema.js" />
+      <item itemvalue="Node.js.cmd.js" />
+      <item itemvalue="Node.js.dbserver.js" />
       <item itemvalue="Node.js.map.js" />
+      <item itemvalue="Node.js.userSchema.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.userSchema.js" />
+        <item itemvalue="Node.js.rootSchema.js" />
         <item itemvalue="Node.js.map.js" />
-        <item itemvalue="JavaScript Debug.tpl.index.html" />
-        <item itemvalue="Gulp.js.default" />
+        <item itemvalue="Node.js.dbserver.js" />
+        <item itemvalue="Node.js.cmd.js" />
       </list>
     </recent_temporary>
   </component>
@@ -466,388 +599,365 @@
       <workItem from="1543919243258" duration="2451000" />
       <workItem from="1544170608593" duration="17620000" />
       <workItem from="1544497585701" duration="26474000" />
-      <workItem from="1544783030728" duration="6996000" />
+      <workItem from="1544783030728" duration="7100000" />
+      <workItem from="1545191989829" duration="1013000" />
+      <workItem from="1545445795178" duration="4422000" />
+      <workItem from="1545815193716" duration="5443000" />
+      <workItem from="1546162163248" duration="447000" />
+      <workItem from="1546222435820" duration="10761000" />
+      <workItem from="1546313860103" duration="1816000" />
+      <workItem from="1546323381377" duration="1311000" />
+      <workItem from="1546328178345" duration="1462000" />
+      <workItem from="1546330253023" duration="534000" />
+      <workItem from="1546330877798" duration="68000" />
+      <workItem from="1546330963995" duration="360000" />
+      <workItem from="1546331581104" duration="446000" />
+      <workItem from="1546332493871" duration="518000" />
+      <workItem from="1546333631433" duration="313000" />
+      <workItem from="1546334065976" duration="53000" />
+      <workItem from="1546334144682" duration="10779000" />
+      <workItem from="1546351081700" duration="1937000" />
+      <workItem from="1546396093830" duration="25316000" />
+      <workItem from="1546515731788" duration="5095000" />
+      <workItem from="1546599732850" duration="2000" />
+      <workItem from="1546661618819" duration="5306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243912000" />
+    <option name="totallyTimeSpent" value="321418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24524313" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32848486" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33454546" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987879" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Salesforce" order="7" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49717513" visible="true" weight="0.31148696" />
+      <window_info id="Structure" order="1" sideWeight="0.50094163" side_tool="true" weight="0.31148696" />
+      <window_info id="Favorites" order="2" sideWeight="0.50282484" side_tool="true" weight="0.31148696" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989429" weight="0.32771084" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39759037" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Salesforce" order="7" />
+      <window_info anchor="bottom" id="Debug Logs" order="8" />
+      <window_info anchor="bottom" id="Execute Anonymous" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49753347" visible="true" weight="0.4313253" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5024665" side_tool="true" weight="0.3554217" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49964765" weight="0.32891566" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Debug Logs" order="7" />
-      <window_info anchor="bottom" id="Execute Anonymous" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Salesforce" order="12" />
-      <window_info anchor="bottom" id="Debug Logs" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32864866" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17928496" />
       <window_info id="Structure" order="1" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32864866" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Debug Logs" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Execute Anonymous" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3355856" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Salesforce" order="12" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="4" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/pages/index/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/login/login.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/css/zui.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/tools/gadget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/zone.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/article/tpl.article.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="25" column="14" lean-forward="true" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/menu/menu.html" />
-    <entry file="file://$PROJECT_DIR$/build/config/less.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/menu/menu.js" />
-    <entry file="file://$PROJECT_DIR$/server/model/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/issue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/utils/multerUtil.js">
+    <entry file="file://$PROJECT_DIR$/dbserver/Models/User/UserQueriesQL.es6" />
+    <entry file="file://$PROJECT_DIR$/dbserver/Models/User/UserQL.es6" />
+    <entry file="file://$PROJECT_DIR$/dbserver/Models/User/UserMutationsQL.es6" />
+    <entry file="file://$PROJECT_DIR$/dbserver/package.json" />
+    <entry file="file://$PROJECT_DIR$/servers/routes/index.js" />
+    <entry file="file://$PROJECT_DIR$/build/cmd.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/config/site.js">
+    <entry file="file://$PROJECT_DIR$/servers/package.json" />
+    <entry file="file://$PROJECT_DIR$/servers/server.js" />
+    <entry file="file://$PROJECT_DIR$/servers/data/schema.js" />
+    <entry file="file://$PROJECT_DIR$/client/src/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="1080">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/header/header.less" />
-    <entry file="file://$PROJECT_DIR$/client/src/components/calendar/calendar.js" />
-    <entry file="file://$PROJECT_DIR$/client/src/components/calendar/calendar.html" />
-    <entry file="file://$PROJECT_DIR$/client/src/components/header/header.html" />
-    <entry file="file://$PROJECT_DIR$/client/src/component/menu/menu.vue" />
-    <entry file="file://$PROJECT_DIR$/client/src/js/router.js">
+    <entry file="file://$PROJECT_DIR$/mydbserver/sql.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/js/requirejs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/component/header/header.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-201" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/css/lessConfig.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/login/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="288">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="128" column="79" selection-start-line="128" selection-start-column="79" selection-end-line="128" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/dist/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="37" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/index/index.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        <state relative-caret-position="426">
+          <caret line="536" column="19" selection-start-line="536" selection-start-column="19" selection-end-line="536" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/pages/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/config.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.js">
+    <entry file="file://$PROJECT_DIR$/mydbserver/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/routes/issue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="288">
+          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/index/tpl.index.html">
+    <entry file="file://$PROJECT_DIR$/mydbserver/models/comment.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/controls/uploadController.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/models/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="1392">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/models/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/controls/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/hobby/hobbyQL.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/hobby/hobbySchema.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/utils/multerUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/user/userTypeQL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/models/settings.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/config/site.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/db/sql.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/user/userSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="25" column="18" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.less">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/list/tpl.list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/db/schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/rootSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/models/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1896">
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/login/tpl.login.html">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="3" column="37" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="37" />
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/login/login.less">
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/post/postQueriesQL.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="1080">
+          <caret line="45" column="35" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/post/postTypeQL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/user/userMutationQL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/user/userQL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/user/userQueriesQL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="107" column="9" selection-start-line="107" selection-start-column="9" selection-end-line="107" selection-end-column="9" />
+        <state relative-caret-position="1752">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/component/header/header.js">
+    <entry file="file://$PROJECT_DIR$/mydbserver/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/list/tpl.list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/css/zui.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/component/header/header.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/component/header/header.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controls/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="33" column="39" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
+        <state relative-caret-position="385">
+          <caret line="22" column="12" selection-start-line="22" selection-end-line="23" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#1954#1994#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/client/dist/js/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="269">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="36" column="31" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/post/postSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="53" column="68" selection-start-line="53" selection-start-column="62" selection-end-line="53" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mydbserver/schema/post/postQL.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/article/article.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/article/article.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/list/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/pages/article/tpl.article.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
         </state>
       </provider>
     </entry>

@@ -46,6 +46,7 @@
     "http-proxy-middleware": "^0.18.0",
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
+    "node-cmd": "^3.0.0",
     "path": "^0.12.7",
     "precss": "^1.4.0",
     "promise": "^7.1.1",
@@ -53,7 +54,11 @@
     "through2": "^2.0.3",
     "vueify-insert-css": "^1.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bson-ext": "^2.0.1",
+    "kerberos": "^1.1.2",
+    "mongodb": "^3.1.10"
+  },
   "jshintConfig": {
     "undef": true,
     "unused": true,

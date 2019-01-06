@@ -1,4 +1,5 @@
 let {
+	GraphQLInputObjectType,
 	GraphQLObjectType,
 	GraphQLSchema,
 	GraphQLString,
@@ -8,21 +9,49 @@ let {
 	GraphQLID
 } = require('graphql');
 
-let UserType = require('./userTypeQL');
-let User = require('./userSchema');
+let PostType = require('./postTypeQL');
+let Post = require('./postSchema');
+
+let searchTime = new GraphQLInputObjectType({
+	name: 'searchTime',
+	description: 'An article',
+	fields: () => ({
+		date:{
+			type:GraphQLString
+		},
+		year:{
+			type:GraphQLString
+		},
+		month:{
+			type:GraphQLString
+		},
+		day:{
+			type:GraphQLString
+		},
+		minute:{
+			type:GraphQLString
+		}
+	})
+})
 
 module.exports =  {
-	users: {
-		type: new GraphQLList(UserType),
-		resolve: User.getListOfUsers
+	posts: {
+		type: new GraphQLList(PostType),
+		resolve: Post.getListOfPost
 	},
-	user: {
-		type: UserType,
+	post: {
+		type: PostType,
 		args: {
-			id: {
-				type: GraphQLID
+			title: {
+				type: GraphQLString
+			},
+			username:{
+				type: GraphQLString
+			},
+			time:{
+				type: searchTime
 			}
 		},
-		resolve: User.getUserByPosition
+		resolve: Post.getPostByArgs
 	}
 };

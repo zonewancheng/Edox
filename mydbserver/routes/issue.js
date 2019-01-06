@@ -1,5 +1,5 @@
 var crypto = require('crypto');
-var flash  = require('connect-flash');
+//var flash  = require('connect-flash');
 var site   = require('../config/site.js');
 var user   = require('../controls/user.js');
 var User   = require('../models/user.js');

@@ -1,8 +1,8 @@
 <div id="app">
     <div id='mainPage'>
         <header-comp title="日积月累，坚持不懈"></header-comp>
-        <ul class="archive-list">
-            <template>
+        <ul class="archive-list" v-if="posts.length>0">
+            <template >
                 <li v-for="(post,index) in posts">
                     <h3 class="article-year" v-if="index==0 || posts[index-1].time.year!=post.time.year">{{post.time.year}}</h3>
                     <div class="article-title-line">

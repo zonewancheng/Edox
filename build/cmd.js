@@ -3,15 +3,15 @@
  * @type {commandline}
  */
 
-let cmd = require('node-cmd');
+/*let cmd = require('node-cmd');
 
 cmd.get(
 	`
-	node ../server/start
+	node ../servers/start
 	`,
 	function (err, data, stderr) {
 	
 	}
-);
+);*/
 
 //cmd.run('touch example.created.file');

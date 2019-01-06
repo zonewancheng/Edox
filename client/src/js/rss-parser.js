@@ -6960,7 +6960,7 @@
                 // if we're not piping anywhere, then do nothing.
                 if (state.pipesCount === 0) return this;
 
-                // just one destination.  most common case.
+                // just one destination.  most common.js case.
                 if (state.pipesCount === 1) {
                     // passed in one, but it's not the right one.
                     if (dest && dest !== state.pipes) return this;

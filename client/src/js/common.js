@@ -25,7 +25,21 @@ let commonJs = {
 				return encodeURIComponent(json[key])
 			}).join('/');
 	},
-	
+	getQueryString:(name) =>{
+		let reg = `(^|&)${name}=([^&]*)(&|$)`
+		let r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	},
+	getUrlParams:function () {
+		let pram = window.location.search.substr(1);
+		pram = pram.split("&");
+		let params = {};
+		for(let index in pram){
+			let arr = pram[index].split("=");
+			params[decodeURIComponent(arr[0])]=decodeURIComponent(arr[1]);
+		}
+		return params
+	}
 	/**
 	 * 生成签名并在签名中添加salt
 	 * @param paraStr
